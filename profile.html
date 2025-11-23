@@ -10,11 +10,18 @@
     <script src="tailwind.config.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50/50">
+<body class="bg-gray-50/50 font-sans text-gray-900">
 
-    <div class="min-h-screen flex flex-col">
+    <div class="min-h-screen flex flex-col pb-24 md:pb-0">
         <!-- Top Navigation (Desktop) -->
         <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
             <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -58,17 +65,77 @@
                             class="pl-9 pr-4 py-1.5 bg-gray-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-48 transition-all">
                     </div>
                     <div class="h-6 w-px bg-gray-200"></div>
-                    <button
+                    <button id="notificationBtn"
                         class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative">
                         <i class="hgi-stroke hgi-notification-02 text-xl"></i>
                         <span
                             class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
                     </button>
-                    <a href="profile.html"
-                        class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
-                            class="w-8 h-8 rounded-full">
-                    </a>
+
+                    <!-- Profile Dropdown Container -->
+                    <div class="relative">
+                        <button id="profileBtn"
+                            class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors focus:outline-none">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                                class="w-8 h-8 rounded-full">
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div id="profileDropdown"
+                            class="hidden absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 transform origin-top-right transition-all duration-200">
+                            <div class="p-4 border-b border-gray-50">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=4F46E5&color=fff"
+                                        alt="User" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-sm">John Doe</h4>
+                                        <p class="text-xs text-gray-500">john.doe@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <a href="profile.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-user text-lg text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-pencil-edit-02 text-lg text-gray-400"></i>
+                                    Edit Profile
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-credit-card text-lg text-gray-400"></i>
+                                    Subscription
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-help-circle text-lg text-gray-400"></i>
+                                    Help Center
+                                </a>
+                                <a href="settings.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-settings-02 text-lg text-gray-400"></i>
+                                    Settings
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <div class="flex items-center justify-between px-3 py-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <i class="hgi-stroke hgi-moon-02 text-lg text-gray-400"></i>
+                                        <span class="text-sm text-gray-700">Dark Mode</span>
+                                    </div>
+                                    <button
+                                        class="w-10 h-6 bg-gray-200 rounded-full relative transition-colors focus:outline-none">
+                                        <div
+                                            class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm transition-transform">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -96,188 +163,467 @@
 
         <!-- Main Content -->
         <main class="flex-1 overflow-y-auto p-4 md:p-8">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-6xl mx-auto space-y-6">
 
-                <!-- Profile Card -->
-                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
-
-                    <!-- Gradient Header Background -->
-                    <div class="h-32 bg-gradient-to-br from-pink-200 via-orange-100 to-red-100 relative">
+                <!-- Profile Header Card -->
+                <div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm overflow-hidden relative">
+                    <!-- Cover Image with Pattern -->
+                    <div
+                        class="h-48 bg-gradient-to-r from-violet-200 via-fuchsia-100 to-indigo-200 relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-30"
+                            style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;">
+                        </div>
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-pink-300/40 via-orange-200/40 to-peach-200/40">
+                            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/50 to-transparent">
                         </div>
                     </div>
 
-                    <!-- Profile Content -->
-                    <div class="relative px-8 pb-8">
-
-                        <!-- Profile Image -->
-                        <div class="flex justify-left -mt-20 mb-4">
-                            <div class="relative">
-                                <div
-                                    class="w-36 h-36 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 p-1.5 shadow-2xl">
+                    <div class="px-8 pb-8 relative">
+                        <div class="flex flex-col md:flex-row items-start md:items-end gap-6 -mt-16">
+                            <!-- Avatar -->
+                            <div class="relative group">
+                                <div class="w-32 h-32 rounded-full p-1.5 bg-white shadow-xl ring-1 ring-gray-100">
                                     <img src="https://ui-avatars.com/api/?name=John+Doe&background=4F46E5&color=fff&size=200"
-                                        alt="Profile"
-                                        class="w-full h-full rounded-full object-cover border-4 border-white">
+                                        alt="Profile" class="w-full h-full rounded-full object-cover">
                                 </div>
                                 <button
-                                    class="absolute bottom-2 right-2 p-2.5 bg-white text-gray-700 rounded-full shadow-lg hover:bg-gray-50 transition-colors border border-gray-200">
-                                    <i class="hgi-stroke hgi-pencil-edit-02 text-lg"></i>
+                                    class="absolute bottom-1 right-1 p-2 bg-white text-gray-700 rounded-full shadow-lg hover:bg-gray-50 border border-gray-200 transition-transform hover:scale-105">
+                                    <i class="hgi-stroke hgi-camera-01 text-lg"></i>
+                                </button>
+                            </div>
+
+                            <!-- Info -->
+                            <div class="flex-1 mb-2">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h1 class="text-3xl font-bold text-gray-900">John Doe</h1>
+                                    <div class="bg-blue-50 text-blue-600 p-1 rounded-full" title="Verified User">
+                                        <i class="hgi-stroke hgi-tick-02 text-sm"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-500 font-medium mb-3">@John_Doe</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold border border-purple-100">Lucid
+                                        Dreamer</span>
+                                    <span
+                                        class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-semibold border border-indigo-100">Prayer
+                                        Warrior</span>
+                                    <span
+                                        class="px-3 py-1 bg-pink-50 text-pink-700 rounded-full text-xs font-semibold border border-pink-100">Night
+                                        Owl</span>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex items-center gap-3 mb-2 w-full md:w-auto">
+                                <button
+                                    class="flex-1 md:flex-none px-5 py-2.5 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/20 flex items-center justify-center gap-2">
+                                    <i class="hgi-stroke hgi-pencil-edit-02"></i>
+                                    Edit Profile
+                                </button>
+                                <button
+                                    class="px-3 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <i class="hgi-stroke hgi-share-01"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Name & Username -->
-                        <div class="text-left mb-6">
-                            <div class="flex items-left justify-left gap-2 mb-1">
-                                <h1 class="text-2xl font-bold text-gray-900">John Doe</h1>
-                                <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <p class="text-gray-500 text-sm">@John_Doe</p>
+                        <!-- Bio -->
+                        <div class="mt-6 max-w-2xl">
+                            <h3 class="text-sm font-bold text-gray-900 mb-2 uppercase tracking-wider opacity-60">About
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Exploring the depths of the subconscious mind through dreams and prayer. Dedicated to
+                                documenting spiritual growth and understanding the patterns of my inner life.
+                            </p>
                         </div>
+                    </div>
+                </div>
 
 
-                        <!-- About Section -->
-                        <div class="mb-6">
-                            <h3 class="text-sm font-bold text-gray-900 mb-2">About</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed">
-                                I'm John Doe, a product-focused UI/UX designer who blends user research, interaction
-                                design, and visual craft to build intuitive web and mobile experiences.
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div
+                        class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <div
+                            class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <i class="hgi-stroke hgi-moon-stars text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900">42</span>
+                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Total
+                            Dreams</span>
+                    </div>
+                    <div
+                        class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <div
+                            class="w-10 h-10 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <i class="hgi-stroke hgi-prayer-hands-02 text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900">156</span>
+                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Prayers</span>
+                    </div>
+                    <div
+                        class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <div
+                            class="w-10 h-10 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <i class="hgi-stroke hgi-fire text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900">12</span>
+                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Day
+                            Streak</span>
+                    </div>
+                    <div
+                        class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <div
+                            class="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <i class="hgi-stroke hgi-chart-bar-01 text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900">Happy</span>
+                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">Avg Mood</span>
+                    </div>
+                </div>
+
+                <!-- Main Grid: Activity & Sidebar -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- Left Column: Recent Activity -->
+                    <div class="lg:col-span-2 space-y-8">
+
+                        <!-- Recent Entries -->
+                        <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900">Recent Entries</h3>
+                                    <p class="text-xs text-gray-500 mt-1">Your latest activity</p>
+                                </div>
+                                <a href="activities.html"
+                                    class="text-sm text-primary font-semibold hover:underline flex items-center gap-1">
+                                    View All <i class="hgi-stroke hgi-arrow-right-01 text-xs"></i>
+                                </a>
+                            </div>
+                            <div class="space-y-4">
+                                <!-- Entry 1 -->
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-2 h-2 rounded-full bg-indigo-600 ring-4 ring-indigo-50"></div>
+                                        <div class="w-0.5 h-full bg-gray-100 mt-2"></div>
+                                    </div>
+                                    <div class="flex-1 pb-6">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-xs font-bold text-gray-400">2h ago</span>
+                                                <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                <span class="text-xs text-gray-500">Dream</span>
+                                            </div>
+                                            <div
+                                                class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+                                                <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                                            </div>
+                                        </div>
+                                        <h4
+                                            class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                            Flying Over the Ocean</h4>
+                                        <p class="text-sm text-gray-600 line-clamp-2 mb-3">I was flying high above a
+                                            calm blue ocean...</p>
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs rounded-lg font-semibold">Lucid</span>
+                                            <span
+                                                class="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-lg font-semibold">Flying</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 2 -->
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-2 h-2 rounded-full bg-purple-600 ring-4 ring-purple-50"></div>
+                                        <div class="w-0.5 h-full bg-gray-100 mt-2"></div>
+                                    </div>
+                                    <div class="flex-1 pb-6">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-xs font-bold text-gray-400">Yesterday</span>
+                                                <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                <span class="text-xs text-gray-500">Prayer</span>
+                                            </div>
+                                            <div
+                                                class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                                                <i class="hgi-stroke hgi-prayer-hands-02 text-lg"></i>
+                                            </div>
+                                        </div>
+                                        <h4
+                                            class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                            Prayer for Guidance</h4>
+                                        <p class="text-sm text-gray-600 line-clamp-2 mb-3">Lord, please show me the
+                                            path regarding my career...</p>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 3 -->
+                                <div class="flex gap-4 group cursor-pointer">
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-2 h-2 rounded-full bg-pink-600 ring-4 ring-pink-50"></div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-start justify-between mb-2">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-xs font-bold text-gray-400">2 days ago</span>
+                                                <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                <span class="text-xs text-gray-500">Mood</span>
+                                            </div>
+                                            <div
+                                                class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 shrink-0">
+                                                <i class="hgi-stroke hgi-smile text-lg"></i>
+                                            </div>
+                                        </div>
+                                        <h4
+                                            class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                            Feeling Grateful</h4>
+                                        <p class="text-sm text-gray-600 line-clamp-2 mb-3">Today was a really good day.
+                                            I felt a deep sense of peace and gratitude for my family.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Sidebar -->
+                    <div class="space-y-8">
+
+                        <!-- Consistency Score -->
+                        <div
+                            class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm text-center relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full -mr-8 -mt-8">
+                            </div>
+
+                            <h3 class="text-lg font-bold text-gray-900 mb-6 relative z-10">Consistency Score</h3>
+
+                            <div class="relative w-40 h-40 mx-auto mb-6">
+                                <!-- Circular Progress (SVG) -->
+                                <svg class="w-full h-full transform -rotate-90">
+                                    <circle cx="80" cy="80" r="70" stroke="currentColor" stroke-width="12"
+                                        fill="transparent" class="text-gray-100" />
+                                    <circle cx="80" cy="80" r="70" stroke="currentColor" stroke-width="12"
+                                        fill="transparent" stroke-dasharray="440" stroke-dashoffset="66"
+                                        class="text-primary" stroke-linecap="round" />
+                                </svg>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span class="text-4xl font-bold text-gray-900">85%</span>
+                                    <span class="text-xs text-gray-500 font-medium uppercase">Great!</span>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-500 leading-relaxed relative z-10">
+                                You're in the top <span class="font-bold text-primary">15%</span> of consistent
+                                journalers this month. Keep it up!
                             </p>
                         </div>
 
-                        <!-- Stats -->
+                        <!-- Upgrade Card -->
+                        <div
+                            class="bg-gray-900 rounded-3xl p-6 text-white relative overflow-hidden shadow-xl shadow-gray-900/20">
+                            <!-- Decorative Pattern -->
+                            <div class="absolute inset-0 opacity-10"
+                                style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;">
+                            </div>
+                            <div
+                                class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-3xl opacity-20 -mr-10 -mt-10">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div
+                                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-white/10">
+                                    <i class="hgi-stroke hgi-lightning-01 text-2xl text-yellow-300"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Upgrade to Pro</h3>
+                                <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                    Unlock advanced analytics, unlimited AI interpretations, and cloud backup.
+                                </p>
+                                <button
+                                    class="w-full py-3 bg-white text-gray-900 rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors shadow-lg shadow-white/10">
+                                    Get Pro Access
+                                </button>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
 
-                <!-- Additional Stats & Activity -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
 
-                    <!-- Dream Stats -->
-                    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4">Dream Statistics</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
-                                        <i class="hgi-stroke hgi-moon-stars text-purple-600"></i>
-                                    </div>
-                                    <span class="text-sm font-medium text-gray-700">Total Dreams</span>
-                                </div>
-                                <span class="text-lg font-bold text-gray-900">24</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center">
-                                        <i class="hgi-stroke hgi-prayer-hands-02 text-green-600"></i>
-                                    </div>
-                                    <span class="text-sm font-medium text-gray-700">Prayers</span>
-                                </div>
-                                <span class="text-lg font-bold text-gray-900">15</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center">
-                                        <i class="hgi-stroke hgi-star text-yellow-600"></i>
-                                    </div>
-                                    <span class="text-sm font-medium text-gray-700">Answered</span>
-                                </div>
-                                <span class="text-lg font-bold text-gray-900">8</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Activity Stats -->
-                    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4">Activity</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between text-sm mb-2">
-                                    <span class="text-gray-600">Prayer Consistency</span>
-                                    <span class="font-semibold text-gray-900">85%</span>
-                                </div>
-                                <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-500"
-                                        style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-2">
-                                    <span class="text-gray-600">Dream Recall</span>
-                                    <span class="font-semibold text-gray-900">60%</span>
-                                </div>
-                                <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full transition-all duration-500"
-                                        style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-2">
-                                    <span class="text-gray-600">Journaling Streak</span>
-                                    <span class="font-semibold text-gray-900">12 Days</span>
-                                </div>
-                                <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-orange-400 to-orange-600 rounded-full transition-all duration-500"
-                                        style="width: 40%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Upgrade Card -->
-                <div
-                    class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl shadow-sm p-8 text-white mt-8">
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Upgrade to Pro</h3>
-                            <p class="text-white/90 mb-6 max-w-md">Unlock advanced analytics, unlimited entries, and
-                                exclusive features to enhance your spiritual journey.</p>
-                            <button
-                                class="px-6 py-3 bg-white text-purple-600 rounded-xl font-bold hover:bg-gray-50 transition-colors shadow-lg">
-                                Get Started
-                            </button>
-                        </div>
-                        <div class="hidden md:block">
-                            <i class="hgi-stroke hgi-crown text-6xl opacity-20"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </main>
     </div>
 
     <!-- Mobile Bottom Nav -->
+    <!-- Mobile Bottom Nav -->
     <nav
-        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-50 flex justify-between items-center px-6 py-3">
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 px-2 py-2 flex justify-between items-end">
         <a href="index.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Home</span>
         </a>
         <a href="dreams.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-moon-stars text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Dreams</span>
         </a>
-        <div class="relative -top-8">
+
+        <div class="relative -top-6 mx-2">
             <button
-                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
-                <i class="hgi-stroke hgi-plus text-2xl"></i>
+                class="w-14 h-14 bg-gray-900 rounded-[20px] flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform">
+                <i class="hgi-stroke hgi-plus-sign text-2xl"></i>
             </button>
         </div>
+
         <a href="prayers.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Prayers</span>
         </a>
-        <a href="profile.html" class="flex flex-col items-center gap-1 text-primary">
-            <i class="hgi-stroke hgi-user text-2xl"></i>
+        <a href="profile.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-primary transition-colors group">
+            <i class="hgi-stroke hgi-user text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Profile</span>
         </a>
     </nav>
 
+    <!-- Notification Drawer Overlay -->
+    <div id="notificationOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Notification Drawer -->
+    <div id="notificationDrawer"
+        class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-white shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-white sticky top-0 z-10">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold text-gray-900">Notifications</h2>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">3 new</span>
+            </div>
+            <button id="closeNotificationBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+
+            <!-- Smart Insight -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-5 border border-blue-100">
+                <div class="flex items-start gap-3 mb-3">
+                    <i class="hgi-stroke hgi-ai-magic text-blue-600 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm mb-1">Smart Insight</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">You haven't logged a dream in 3 days. Usually,
+                            you log them on Monday mornings.</p>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-2 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                    Log a Dream
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex p-1 bg-gray-100 rounded-xl">
+                <button
+                    class="flex-1 py-1.5 text-sm font-medium text-gray-900 bg-white rounded-lg shadow-sm">All</button>
+                <button class="flex-1 py-1.5 text-sm font-medium text-gray-500 hover:text-gray-700">Mentions</button>
+            </div>
+
+            <!-- List -->
+            <div class="space-y-4">
+                <!-- Item -->
+                <div
+                    class="flex gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 transition-colors shadow-sm">
+                    <div class="flex-shrink-0">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=random"
+                            class="w-10 h-10 rounded-full">
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900"><span class="font-bold">Sarah Chen</span> commented on your
+                                dream</p>
+                            <span class="text-xs text-gray-400">2h</span>
+                        </div>
+                        <p class="text-xs text-gray-500 line-clamp-2 mb-2">"This is really interesting! I had a similar
+                            dream about flying..."</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-2 py-0.5 bg-gray-100 text-gray-600 text-[10px] font-bold rounded uppercase tracking-wider">Dream</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="flex gap-4 p-4 rounded-2xl bg-blue-50/50 border border-blue-100 transition-colors">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                            <i class="hgi-stroke hgi-notification-03"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900 font-medium">System Update</p>
+                            <span class="text-xs text-gray-400">5h</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mb-2">New features are available for your prayer journal.</p>
+                        <button class="text-xs font-bold text-blue-600 hover:underline">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <button class="w-full py-3 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Mark all as read
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Notification Drawer Logic
+        const notificationBtn = document.getElementById('notificationBtn');
+        const closeNotificationBtn = document.getElementById('closeNotificationBtn');
+        const notificationDrawer = document.getElementById('notificationDrawer');
+        const notificationOverlay = document.getElementById('notificationOverlay');
+
+        function toggleNotificationDrawer() {
+            const isHidden = notificationDrawer.classList.contains('translate-x-full');
+            if (isHidden) {
+                notificationDrawer.classList.remove('translate-x-full');
+                notificationOverlay.classList.remove('hidden');
+                setTimeout(() => notificationOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                notificationDrawer.classList.add('translate-x-full');
+                notificationOverlay.classList.add('opacity-0');
+                setTimeout(() => notificationOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        notificationBtn.addEventListener('click', toggleNotificationDrawer);
+        closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
+        notificationOverlay.addEventListener('click', toggleNotificationDrawer);
+
+        // Profile Dropdown Logic
+        const profileBtn = document.getElementById('profileBtn');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!profileBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+                profileDropdown.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -74,8 +74,11 @@
                 </div>
 
                 <!-- Emotion Selector -->
-                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-                    <div class="flex flex-wrap items-center justify-center gap-4">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                        <i class="hgi-stroke hgi-face-smile text-9xl text-orange-500"></i>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-4 relative z-10">
                         <button type="button" onclick="selectMood('Calm', '😊', 'orange')"
                             class="flex flex-col items-center gap-3 group">
                             <div
@@ -148,12 +151,16 @@
                 </div>
 
                 <!-- Notes Section -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
-                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <div
+                    class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                        <i class="hgi-stroke hgi-pencil-edit-02 text-9xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2 relative z-10">
                         <i class="hgi-stroke hgi-note text-purple-600"></i> Add a Note (Optional)
                     </h3>
                     <textarea id="moodNotes" placeholder="What's on your mind today?"
-                        class="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none resize-none leading-relaxed"></textarea>
+                        class="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none resize-none leading-relaxed relative z-10"></textarea>
                 </div>
 
                 <!-- Save Button -->
@@ -163,8 +170,11 @@
                 </button>
 
                 <!-- Mood History -->
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
-                    <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Mood Logs</h3>
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                        <i class="hgi-stroke hgi-clock-01 text-9xl text-gray-500"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 relative z-10">Recent Mood Logs</h3>
                     <div id="moodHistory" class="space-y-3">
                         <p class="text-sm text-gray-500 italic">No mood logs yet. Start logging your mood above!</p>
                     </div>

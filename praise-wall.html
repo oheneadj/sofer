@@ -11,8 +11,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Removed Tailwind Import -->
-        
-    
+
+
 </head>
 
 <body class="bg-gray-50/50">
@@ -109,12 +109,64 @@
                     </div>
                 </div>
 
+                <!-- Daily Highlights Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- On This Day -->
+                    <div
+                        class="lg:col-span-2 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-100 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-indigo-100 rounded-full blur-xl opacity-50">
+                        </div>
+
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-white text-indigo-600 text-xs font-bold rounded-full shadow-sm border border-indigo-50 flex items-center gap-1">
+                                <i class="hgi-stroke hgi-calendar-03"></i> On This Day
+                            </span>
+                            <span class="text-xs text-gray-500 font-medium">1 Year Ago</span>
+                        </div>
+
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Restored Relationship</h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                "Lord, I thank you for restoring my relationship with my brother. After years of
+                                silence, we finally spoke today and forgave each other. It's a miracle only You could
+                                do."
+                            </p>
+                            <div class="flex items-center gap-2">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-700 text-xs font-bold">
+                                    J</div>
+                                <span class="text-sm text-gray-600 font-medium">John Doe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thanksgiving Quote -->
+                    <div
+                        class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 border border-orange-100 flex flex-col justify-center relative overflow-hidden">
+                        <i class="hgi-stroke hgi-quote-up absolute top-4 right-4 text-4xl text-orange-200"></i>
+
+                        <div class="relative z-10 text-center">
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2 block">Verse of
+                                the Day</span>
+                            <p class="text-lg font-serif text-gray-800 italic mb-4">
+                                "Give thanks to the Lord, for he is good; his love endures forever."
+                            </p>
+                            <span class="text-sm font-bold text-gray-900">— Psalm 107:1</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Praise Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <!-- Praise Card 1 -->
                     <div
-                        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        class="bg-white flex justify-between flex-col p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-briefcase-01 text-9xl text-blue-500"></i>
+                        </div>
                         <div class="flex items-center justify-between mb-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
@@ -135,11 +187,14 @@
 
                     <!-- Praise Card 2 -->
                     <div
-                        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        class="bg-white flex justify-between flex-col p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-heart text-9xl text-green-500"></i>
+                        </div>
                         <div class="flex items-center justify-between mb-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                <i class="hgi-stroke hgi-heart text-xl"></i>
+                                <i class="hgi hgi-stroke hgi-heart-add text-xl"></i>
                             </div>
                             <span class="text-xs text-gray-400">Oct 15, 2024</span>
                         </div>
@@ -156,7 +211,10 @@
 
                     <!-- Praise Card 3 -->
                     <div
-                        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        class="bg-white flex justify-between flex-col p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-home-01 text-9xl text-purple-500"></i>
+                        </div>
                         <div class="flex items-center justify-between mb-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
@@ -179,29 +237,36 @@
     </div>
 
     <!-- Mobile Bottom Nav -->
+    <!-- Mobile Bottom Nav -->
     <nav
-        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-50 flex justify-between items-center px-6 py-3">
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 px-2 py-2 flex justify-between items-end">
         <a href="index.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Home</span>
         </a>
         <a href="dreams.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-moon-stars text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Dreams</span>
         </a>
-        <div class="relative -top-8">
+
+        <div class="relative -top-6 mx-2">
             <button
-                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
-                <i class="hgi-stroke hgi-plus text-2xl"></i>
+                class="w-14 h-14 bg-gray-900 rounded-[20px] flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform">
+                <i class="hgi-stroke hgi-plus-sign text-2xl"></i>
             </button>
         </div>
+
         <a href="prayers.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-primary transition-colors group">
+            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Prayers</span>
         </a>
         <a href="profile.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-user text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-user text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Profile</span>
         </a>
     </nav>
 
