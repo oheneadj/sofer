@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Dashboard</title>
+
+    <!-- HugeIcons -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+    <!-- Custom CSS -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Removed Tailwind Import -->
+
+
+</head>
+
+<body class="bg-gray-50/50">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Navigation (Desktop) -->
+        <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <!-- Logo & Nav Links -->
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                            <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                        </div>
+                        <span class="text-lg font-bold text-gray-900 tracking-tight">Seer</span>
+                    </div>
+
+                    <nav class="flex items-center gap-1">
+                        <a href="index.html"
+                            class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard
+                        </a>
+                        <a href="dreams.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-moon-stars"></i> Dreams
+                        </a>
+                        <a href="prayers.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-prayer-hands-02"></i> Prayers
+                        </a>
+                        <a href="emotions.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-smile"></i> Emotions
+                        </a>
+                        <a href="praise-wall.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-star"></i> Praise Wall
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <i class="hgi-stroke hgi-search-01 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" placeholder="Search..."
+                            class="pl-9 pr-4 py-1.5 bg-gray-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-48 transition-all">
+                    </div>
+                    <div class="h-6 w-px bg-gray-200"></div>
+                    <button
+                        class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative">
+                        <i class="hgi-stroke hgi-notification-02 text-xl"></i>
+                        <span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
+                    <a href="profile.html"
+                        class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                            class="w-8 h-8 rounded-full">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Header -->
+        <header
+            class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">Seer</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-search-01 text-xl"></i>
+                </button>
+                <a href="profile.html">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                        class="w-8 h-8 rounded-full">
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+                    <!-- Left Column (Main Content) -->
+                    <div class="lg:col-span-3 space-y-8">
+                        <!-- Hero Section -->
+                        <!-- Hero Section -->
+                        <div
+                            class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 text-white shadow-xl p-6 md:p-8">
+                            <!-- Decorative Elements -->
+                            <div
+                                class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl">
+                            </div>
+
+                            <div class="relative z-10 max-w-3xl">
+                                <div
+                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-medium mb-3 border border-white/20">
+                                    <i class="hgi-stroke hgi-sparkles"></i> Daily Inspiration
+                                </div>
+
+                                <h2 id="quote-text"
+                                    class="text-lg md:text-xl font-bold leading-relaxed mb-4 font-serif italic transition-opacity duration-300">
+                                    "For God speaks again and again, though people do not recognize it. He speaks in
+                                    dreams, in visions of the night, when deep sleep falls on people as they lie in
+                                    their beds."
+                                </h2>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 transition-opacity duration-300"
+                                    id="quote-meta">
+                                    <div>
+                                        <p id="quote-author" class="font-semibold text-sm">Job 33:14-15</p>
+                                        <p id="quote-version" class="text-indigo-200 text-[10px]">NLT</p>
+                                    </div>
+
+                                    <button onclick="refreshQuote()"
+                                        class="group flex items-center gap-2 px-3 py-1.5 bg-white text-indigo-600 rounded-lg text-[10px] font-bold hover:bg-indigo-50 transition-all shadow-lg shadow-black/5 w-fit">
+                                        <i
+                                            class="hgi-stroke hgi-refresh group-hover:rotate-180 transition-transform duration-500"></i>
+                                        New Quote
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Welcome Section -->
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <h1 class="text-2xl font-bold text-gray-900">Good Morning, John! ☀️</h1>
+                                <p class="text-gray-500 text-sm mt-1">Here's what's happening in your spiritual journey
+                                    today.</p>
+                            </div>
+                            <div class="flex gap-3">
+                                <!-- Filter Dropdown -->
+                                <div class="relative">
+                                    <button onclick="toggleFilter()" id="filterButton"
+                                        class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50 shadow-sm transition-all">
+                                        <i class="hgi-stroke hgi-filter text-lg"></i> Filter
+                                        <i class="hgi-stroke hgi-arrow-down-01 text-xs"></i>
+                                    </button>
+                                    <div id="filterDropdown"
+                                        class="hidden absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-200 z-50">
+                                        <div class="p-2">
+                                            <button onclick="applyFilter('all')"
+                                                class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">All
+                                                Time</button>
+                                            <button onclick="applyFilter('today')"
+                                                class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Today</button>
+                                            <button onclick="applyFilter('week')"
+                                                class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">This
+                                                Week</button>
+                                            <button onclick="applyFilter('month')"
+                                                class="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">This
+                                                Month</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="record-dream.html"
+                                    class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+                                    <i class="hgi-stroke hgi-plus text-lg"></i> Record Dream
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Dreams Card -->
+                            <div
+                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                                <!-- Decorative SVG Background -->
+                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
+                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#6366f1"
+                                        d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,40.1,76.4C26.4,83.8,10,86,-6.5,85.6C-23,85.2,-46,82.2,-61.8,73.2C-77.6,64.2,-86.2,49.2,-89.8,33.1C-93.4,17,-92,0,-86.8,-14.8C-81.6,-29.6,-72.6,-42.2,-61.2,-51.4C-49.8,-60.6,-36,-66.4,-22.1,-73.8C-8.2,-81.2,5.8,-90.2,20.9,-91.8C36,-93.4,30.6,-83.6,44.7,-76.4Z"
+                                        transform="translate(100 100)" />
+                                </svg>
+
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-green-600">
+                                            <i class="hgi-stroke hgi-arrow-up-01 text-sm"></i>
+                                            <span class="text-sm font-bold">12%</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-5xl font-black text-gray-900 mb-2">24</h3>
+                                    <p class="text-sm font-semibold text-gray-700">Dreams</p>
+                                    <p class="text-xs text-gray-500 mt-1">Recorded this month</p>
+                                </div>
+                            </div>
+
+                            <!-- Prayers Card -->
+                            <div
+                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                                <!-- Decorative SVG Background -->
+                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
+                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#f59e0b"
+                                        d="M41.3,-72.5C54.4,-66.3,66.6,-56.9,74.7,-44.8C82.8,-32.7,86.8,-18,87.3,-3.6C87.8,10.8,84.8,24.9,78.1,37.8C71.4,50.7,61,62.4,48.3,69.8C35.6,77.2,20.6,80.3,5.8,80.1C-9,79.9,-23.8,76.4,-37.4,70.1C-51,63.8,-63.4,54.7,-71.6,42.8C-79.8,30.9,-83.8,16.2,-83.9,1.4C-84,-13.4,-80.2,-28.3,-72.5,-41.2C-64.8,-54.1,-53.2,-65,-40.1,-71.6C-27,-78.2,-12.5,-80.5,1.3,-82.7C15.1,-84.9,28.2,-78.7,41.3,-72.5Z"
+                                        transform="translate(100 100)" />
+                                </svg>
+
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600">
+                                            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-green-600">
+                                            <i class="hgi-stroke hgi-arrow-up-01 text-sm"></i>
+                                            <span class="text-sm font-bold">5%</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-5xl font-black text-gray-900 mb-2">15</h3>
+                                    <p class="text-sm font-semibold text-gray-700">Prayers</p>
+                                    <p class="text-xs text-gray-500 mt-1">Active requests</p>
+                                </div>
+                            </div>
+
+                            <!-- Answered Card -->
+                            <div
+                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                                <!-- Decorative SVG Background -->
+                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
+                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#10b981"
+                                        d="M39.5,-67.3C51.4,-60.1,61.3,-50.2,68.4,-38.5C75.5,-26.8,79.8,-13.4,80.9,0.5C82,14.4,79.9,28.8,74.1,41.9C68.3,55,58.8,66.8,46.8,73.9C34.8,81,20.3,83.4,6.1,83.1C-8.1,82.8,-22,79.8,-34.6,73.4C-47.2,67,-58.5,57.2,-66.8,45.1C-75.1,33,-80.4,18.6,-81.3,3.8C-82.2,-11,-78.7,-26.2,-71.4,-39.4C-64.1,-52.6,-53,-63.8,-40.1,-70.6C-27.2,-77.4,-13.6,-79.8,0.3,-80.3C14.2,-80.8,27.6,-74.5,39.5,-67.3Z"
+                                        transform="translate(100 100)" />
+                                </svg>
+
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+                                            <i class="hgi-stroke hgi-star text-2xl"></i>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-green-600">
+                                            <i class="hgi-stroke hgi-arrow-up-01 text-sm"></i>
+                                            <span class="text-sm font-bold">3</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-5xl font-black text-gray-900 mb-2">8</h3>
+                                    <p class="text-sm font-semibold text-gray-700">Answered</p>
+                                    <p class="text-xs text-gray-500 mt-1">Prayers this month</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Log Today's Mood -->
+                        <div
+                            class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-3xl border border-purple-100 shadow-sm">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                                        <i class="hgi-stroke hgi-smile text-purple-600"></i> How are you feeling today?
+                                    </h3>
+                                    <p class="text-sm text-gray-600 mt-1">Track your daily mood</p>
+                                </div>
+                                <a href="log-mood.html" class="text-sm text-purple-600 font-medium hover:underline">View
+                                    All</a>
+                            </div>
+                            <div class="flex items-center gap-3 overflow-x-auto pb-2 no-scrollbar">
+                                <button onclick="quickLogMood('Calm','😊')"
+                                    class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform">
+                                        😊</div>
+                                    <span class="text-xs font-medium text-gray-700">Calm</span>
+                                </button>
+                                <button onclick="quickLogMood('Chill','😌')"
+                                    class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform">
+                                        😌</div>
+                                    <span class="text-xs font-medium text-gray-700">Chill</span>
+                                </button>
+                                <button onclick="quickLogMood('Motivated','🚀')"
+                                    class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform">
+                                        🚀</div>
+                                    <span class="text-xs font-medium text-gray-700">Motivated</span>
+                                </button>
+                                <button onclick="quickLogMood('Grateful','🙏')"
+                                    class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform">
+                                        🙏</div>
+                                    <span class="text-xs font-medium text-gray-700">Grateful</span>
+                                </button>
+                                <button onclick="quickLogMood('Curious','🤔')"
+                                    class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform">
+                                        🤔</div>
+                                    <span class="text-xs font-medium text-gray-700">Curious</span>
+                                </button>
+                                <a href="log-mood.html" class="flex flex-col items-center gap-2 group min-w-[60px]">
+                                    <div
+                                        class="w-14 h-14 rounded-xl border-2 border-dashed border-purple-300 flex items-center justify-center text-xl shadow-sm group-hover:scale-110 transition-transform group-hover:border-purple-400 group-hover:bg-purple-50">
+                                        <i
+                                            class="hgi-stroke hgi-add-circle text-purple-400 group-hover:text-purple-600"></i>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-700">More</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Recent Dreams & Prayers -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Recent Dreams -->
+                            <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-gray-900">Recent Dreams</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Your latest dream entries</p>
+                                    </div>
+                                    <a href="dreams.html"
+                                        class="text-sm text-primary font-semibold hover:underline flex items-center gap-1">
+                                        View All <i class="hgi-stroke hgi-arrow-right-01 text-xs"></i>
+                                    </a>
+                                </div>
+                                <div class="space-y-4">
+                                    <!-- Dream Entry 1 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-primary ring-4 ring-primary/20"></div>
+                                            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                                        </div>
+                                        <div class="flex-1 pb-6">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">08:00 AM</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">2 hours ago</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-cloud-01 text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Flying over the ocean</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">I was flying high above a
+                                                calm blue ocean, feeling a sense of absolute freedom...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-lg font-semibold">Peaceful</span>
+                                                <span
+                                                    class="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs rounded-lg font-semibold">Lucid</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Dream Entry 2 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-gray-300 ring-4 ring-gray-100"></div>
+                                            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                                        </div>
+                                        <div class="flex-1 pb-6">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">Yesterday</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">3:00 PM</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-fire text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Running through a forest</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">The trees were tall and
+                                                ancient, whispering secrets as I ran past them...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-lg font-semibold">Anxious</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Dream Entry 3 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-gray-300 ring-4 ring-gray-100"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">2 days ago</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">Morning</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-tree-02 text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Garden of light</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">A beautiful garden filled
+                                                with glowing flowers and peaceful energy...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-green-50 text-green-700 text-xs rounded-lg font-semibold">Peaceful</span>
+                                                <span
+                                                    class="px-2.5 py-1 bg-yellow-50 text-yellow-700 text-xs rounded-lg font-semibold">Spiritual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Prayers -->
+                            <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-gray-900">Active Prayers</h3>
+                                        <p class="text-xs text-gray-500 mt-1">Your ongoing prayer requests</p>
+                                    </div>
+                                    <a href="prayers.html"
+                                        class="text-sm text-primary font-semibold hover:underline flex items-center gap-1">
+                                        View All <i class="hgi-stroke hgi-arrow-right-01 text-xs"></i>
+                                    </a>
+                                </div>
+                                <div class="space-y-4">
+                                    <!-- Prayer Entry 1 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-primary ring-4 ring-primary/20"></div>
+                                            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                                        </div>
+                                        <div class="flex-1 pb-6">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">Today</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">Morning</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-heart text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Healing for Mom</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">Praying for complete
+                                                recovery and strength for mom after her surgery...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-green-50 text-green-700 text-xs rounded-lg font-semibold">Family</span>
+                                                <span
+                                                    class="px-2.5 py-1 bg-yellow-50 text-yellow-700 text-xs rounded-lg font-semibold">Healing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Prayer Entry 2 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-gray-300 ring-4 ring-gray-100"></div>
+                                            <div class="w-0.5 h-full bg-gray-200 mt-2"></div>
+                                        </div>
+                                        <div class="flex-1 pb-6">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">2 days ago</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">Evening</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-briefcase-01 text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Career Guidance</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">Seeking clarity on the
+                                                new job offer and direction for my career path...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-lg font-semibold">Career</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Prayer Entry 3 -->
+                                    <div class="flex gap-4 group cursor-pointer">
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-2 h-2 rounded-full bg-gray-300 ring-4 ring-gray-100"></div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex items-start justify-between mb-2">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="text-xs font-bold text-gray-400">3 days ago</span>
+                                                    <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+                                                    <span class="text-xs text-gray-500">Night</span>
+                                                </div>
+                                                <div
+                                                    class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                                                    <i class="hgi-stroke hgi-book-02 text-lg"></i>
+                                                </div>
+                                            </div>
+                                            <h4
+                                                class="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                                                Wisdom and Understanding</h4>
+                                            <p class="text-sm text-gray-600 line-clamp-2 mb-3">Praying for wisdom in
+                                                making important life decisions...</p>
+                                            <div class="flex items-center gap-2">
+                                                <span
+                                                    class="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs rounded-lg font-semibold">Spiritual</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="space-y-6">
+
+                        <!-- User Stats Card -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
+                            <div class="relative inline-block mb-4">
+                                <div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-primary to-purple-500">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                                        class="w-full h-full rounded-full border-2 border-white">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 right-0 w-6 h-6 bg-green-500 border-2 border-white rounded-full flex items-center justify-center text-white text-[10px]">
+                                    <i class="hgi-stroke hgi-fire"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900">Good Morning, John!</h3>
+                            <p class="text-sm text-gray-500 mb-6">Keep up the spiritual momentum!</p>
+
+                            <!-- Activity Circle -->
+                            <div class="relative w-32 h-32 mx-auto mb-6">
+                                <svg class="w-full h-full transform -rotate-90">
+                                    <circle cx="64" cy="64" r="56" stroke="currentColor" stroke-width="8"
+                                        fill="transparent" class="text-gray-100" />
+                                    <circle cx="64" cy="64" r="56" stroke="currentColor" stroke-width="8"
+                                        fill="transparent" stroke-dasharray="351.86" stroke-dashoffset="100"
+                                        class="text-primary" stroke-linecap="round" />
+                                </svg>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span class="text-2xl font-bold text-gray-900">72%</span>
+                                    <span class="text-xs text-gray-500">Consistency</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 text-left">
+                                <div class="bg-gray-50 p-3 rounded-xl">
+                                    <p class="text-xs text-gray-500 mb-1">This Week</p>
+                                    <p class="font-bold text-gray-900">12 Dreams</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-xl">
+                                    <p class="text-xs text-gray-500 mb-1">Streak</p>
+                                    <p class="font-bold text-gray-900">5 Days</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Prayer Reminder -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-gray-900">Prayer Reminders</h3>
+                                <button class="text-gray-400 hover:text-primary"><i
+                                        class="hgi-stroke hgi-plus"></i></button>
+                            </div>
+                            <div class="space-y-3">
+                                <div
+                                    class="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl border border-yellow-100">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-yellow-600 shadow-sm">
+                                        <i class="hgi-stroke hgi-clock-01"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900">Pray for Mom</p>
+                                        <p class="text-xs text-yellow-700">Daily at 8:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-xl border border-blue-100">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-blue-600 shadow-sm">
+                                        <i class="hgi-stroke hgi-briefcase-01"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900">Job Interview</p>
+                                        <p class="text-xs text-blue-700">Tomorrow, 10:00 AM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Share Prompt -->
+                        <div
+                            class="bg-gradient-to-br from-primary to-purple-600 p-6 rounded-2xl text-white shadow-lg shadow-primary/20 relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl">
+                            </div>
+                            <div class="relative z-10">
+                                <div
+                                    class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-4">
+                                    <i class="hgi-stroke hgi-recording-01 text-xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold mb-2">Have a dream or vision?</h3>
+                                <p class="text-indigo-100 text-sm mb-4">Don't let the details fade away. Record it now
+                                    while it's fresh!</p>
+                                <a href="record-dream.html"
+                                    class="block w-full py-2.5 bg-white text-primary text-center rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors shadow-lg">
+                                    Record Now
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-50 flex justify-between items-center px-6 py-3">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-primary">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+        </a>
+        <a href="dreams.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+        </a>
+        <div class="relative -top-8">
+            <a href="record-dream.html"
+                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
+                <i class="hgi-stroke hgi-plus text-2xl"></i>
+            </a>
+        </div>
+        <a href="prayers.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-user text-2xl"></i>
+        </a>
+    </nav>
+
+</body>
+
+<script>
+    const quotes = [
+        {
+            text: "For God speaks again and again, though people do not recognize it. He speaks in dreams, in visions of the night, when deep sleep falls on people as they lie in their beds.",
+            author: "Job 33:14-15",
+            version: "NLT"
+        },
+        {
+            text: "And it shall come to pass afterward, that I will pour out my Spirit on all flesh; your sons and your daughters shall prophesy, your old men shall dream dreams, and your young men shall see visions.",
+            author: "Joel 2:28",
+            version: "ESV"
+        },
+        {
+            text: "Call to me and I will answer you, and will tell you great and hidden things that you have not known.",
+            author: "Jeremiah 33:3",
+            version: "ESV"
+        },
+        {
+            text: "The future belongs to those who believe in the beauty of their dreams.",
+            author: "Eleanor Roosevelt",
+            version: "Quote"
+        },
+        {
+            text: "Prayer does not fit us for the greater work; prayer is the greater work.",
+            author: "Oswald Chambers",
+            version: "Quote"
+        },
+        {
+            text: "In a dream, in a vision of the night, when deep sleep falls on men as they slumber in their beds, he may speak in their ears and terrify them with warnings.",
+            author: "Job 33:15-16",
+            version: "NIV"
+        }
+    ];
+
+    function refreshQuote() {
+        const quoteText = document.getElementById('quote-text');
+        const quoteMeta = document.getElementById('quote-meta');
+        const quoteAuthor = document.getElementById('quote-author');
+        const quoteVersion = document.getElementById('quote-version');
+
+        // Get a random quote different from current if possible
+        let randomQuote;
+        do {
+            randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        } while (quoteText.textContent.includes(randomQuote.text) && quotes.length > 1);
+
+        // Simple fade effect
+        quoteText.style.opacity = '0';
+        quoteMeta.style.opacity = '0';
+
+        setTimeout(() => {
+            quoteText.textContent = `"${randomQuote.text}"`;
+            quoteAuthor.textContent = randomQuote.author;
+            quoteVersion.textContent = randomQuote.version;
+
+            quoteText.style.opacity = '1';
+            quoteMeta.style.opacity = '1';
+        }, 300);
+    }
+
+    // Quick mood logging
+    function quickLogMood(name, emoji) {
+        const moodLog = {
+            name,
+            emoji,
+            date: new Date().toISOString(),
+            timestamp: Date.now()
+        };
+        let moodLogs = JSON.parse(localStorage.getItem('moodLogs') || '[]');
+        moodLogs.unshift(moodLog);
+        localStorage.setItem('moodLogs', JSON.stringify(moodLogs.slice(0, 30)));
+        alert(`Mood logged: ${emoji} ${name}`);
+    }
+
+    // Filter functionality
+    function toggleFilter() {
+        const dropdown = document.getElementById('filterDropdown');
+        dropdown.classList.toggle('hidden');
+    }
+
+    function applyFilter(period) {
+        console.log('Filter applied:', period);
+        // Here you would filter the data based on the period
+        toggleFilter();
+        alert(`Filter applied: ${period}`);
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        const filterButton = document.getElementById('filterButton');
+        const filterDropdown = document.getElementById('filterDropdown');
+        if (filterButton && filterDropdown && !filterButton.contains(event.target) && !filterDropdown.contains(event.target)) {
+            filterDropdown.classList.add('hidden');
+        }
+    });
+</script>
+</body>
+
+</html>

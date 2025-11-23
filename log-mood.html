@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Mood - Dream Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-gray-50/50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Navigation (Desktop) -->
+        <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                            <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                        </div>
+                        <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+                    </div>
+                    <nav class="flex items-center gap-1">
+                        <a href="index.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard
+                        </a>
+                        <a href="dreams.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-moon-stars"></i> Dreams
+                        </a>
+                        <a href="prayers.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-prayer-hands-02"></i> Prayers
+                        </a>
+                        <a href="log-mood.html"
+                            class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-smile"></i> Log Mood
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="profile.html"
+                        class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                            class="w-8 h-8 rounded-full">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Header -->
+        <header
+            class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-arrow-left-02 text-2xl"></i>
+                </a>
+                <h1 class="text-xl font-bold text-gray-900">Log Your Mood</h1>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 pb-32">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Today's Date -->
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900" id="currentDate"></h2>
+                    <p class="text-gray-500 mt-1">How are you feeling today?</p>
+                </div>
+
+                <!-- Emotion Selector -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        <button type="button" onclick="selectMood('Calm', '😊', 'orange')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-orange-200">
+                                😊</div>
+                            <span class="text-sm font-bold text-gray-700">Calm</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Chill', '😌', 'blue')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-blue-200">
+                                😌</div>
+                            <span class="text-sm font-bold text-gray-700">Chill</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Motivated', '🚀', 'purple')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-purple-200">
+                                🚀</div>
+                            <span class="text-sm font-bold text-gray-700">Motivated</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Grateful', '🙏', 'yellow')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-yellow-200">
+                                🙏</div>
+                            <span class="text-sm font-bold text-gray-700">Grateful</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Curious', '🤔', 'green')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-green-200">
+                                🤔</div>
+                            <span class="text-sm font-bold text-gray-700">Curious</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Sad', '😔', 'gray')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-gray-300">
+                                😔</div>
+                            <span class="text-sm font-bold text-gray-700">Sad</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Anxious', '😰', 'red')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-red-100 to-pink-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-red-200">
+                                😰</div>
+                            <span class="text-sm font-bold text-gray-700">Anxious</span>
+                        </button>
+                        <button type="button" onclick="selectMood('Energetic', '⚡', 'amber')"
+                            class="flex flex-col items-center gap-3 group">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-4xl shadow-md group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-amber-200">
+                                ⚡</div>
+                            <span class="text-sm font-bold text-gray-700">Energetic</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Selected Mood Display -->
+                <div id="selectedMoodDisplay"
+                    class="hidden bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100">
+                    <div class="flex items-center gap-4">
+                        <div id="selectedMoodEmoji" class="text-5xl"></div>
+                        <div>
+                            <p class="text-sm text-gray-600">You're feeling</p>
+                            <h3 id="selectedMoodName" class="text-2xl font-bold text-gray-900"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <i class="hgi-stroke hgi-note text-purple-600"></i> Add a Note (Optional)
+                    </h3>
+                    <textarea id="moodNotes" placeholder="What's on your mind today?"
+                        class="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none resize-none leading-relaxed"></textarea>
+                </div>
+
+                <!-- Save Button -->
+                <button onclick="saveMood()"
+                    class="w-full px-6 py-4 bg-primary text-white rounded-xl text-base font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all transform hover:scale-[1.02]">
+                    <i class="hgi-stroke hgi-tick-02"></i> Save Mood Log
+                </button>
+
+                <!-- Mood History -->
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Mood Logs</h3>
+                    <div id="moodHistory" class="space-y-3">
+                        <p class="text-sm text-gray-500 italic">No mood logs yet. Start logging your mood above!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-[100] flex justify-between items-center px-6 py-3">
+        <a href="index.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+        </a>
+        <a href="dreams.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+        </a>
+        <div class="relative -top-8">
+            <a href="record-dream.html"
+                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
+                <i class="hgi-stroke hgi-plus text-2xl"></i>
+            </a>
+        </div>
+        <a href="prayers.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-user text-2xl"></i>
+        </a>
+    </nav>
+
+    <script>
+        let selectedMoodData = null;
+        const today = new Date();
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        function selectMood(name, emoji, color) {
+            selectedMoodData = { name, emoji, color, date: new Date().toISOString() };
+            document.getElementById('selectedMoodDisplay').classList.remove('hidden');
+            document.getElementById('selectedMoodEmoji').textContent = emoji;
+            document.getElementById('selectedMoodName').textContent = name;
+        }
+
+        function saveMood() {
+            if (!selectedMoodData) {
+                alert('Please select a mood first!');
+                return;
+            }
+            const notes = document.getElementById('moodNotes').value;
+            const moodLog = { ...selectedMoodData, notes, timestamp: Date.now() };
+
+            let moodLogs = JSON.parse(localStorage.getItem('moodLogs') || '[]');
+            moodLogs.unshift(moodLog);
+            localStorage.setItem('moodLogs', JSON.stringify(moodLogs.slice(0, 30)));
+
+            alert('Mood logged successfully!');
+            document.getElementById('moodNotes').value = '';
+            selectedMoodData = null;
+            document.getElementById('selectedMoodDisplay').classList.add('hidden');
+            loadMoodHistory();
+        }
+
+        function loadMoodHistory() {
+            const moodLogs = JSON.parse(localStorage.getItem('moodLogs') || '[]');
+            const container = document.getElementById('moodHistory');
+            if (moodLogs.length === 0) {
+                container.innerHTML = '<p class="text-sm text-gray-500 italic">No mood logs yet. Start logging your mood above!</p>';
+                return;
+            }
+            container.innerHTML = moodLogs.slice(0, 10).map(log => {
+                const date = new Date(log.date);
+                return `
+                    <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-xl">
+                        <div class="text-3xl">${log.emoji}</div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-gray-900">${log.name}</h4>
+                                <span class="text-xs text-gray-500">${date.toLocaleDateString()}</span>
+                            </div>
+                            ${log.notes ? `<p class="text-sm text-gray-600 mt-1">${log.notes}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        loadMoodHistory();
+    </script>
+</body>
+
+</html>

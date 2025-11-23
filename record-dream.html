@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Dream - Dream Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-gray-50/50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Navigation (Desktop) -->
+        <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                            <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                        </div>
+                        <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+                    </div>
+                    <nav class="flex items-center gap-1">
+                        <a href="index.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard
+                        </a>
+                        <a href="dreams.html"
+                            class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-moon-stars"></i> Dreams
+                        </a>
+                        <a href="prayers.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-prayer-hands-02"></i> Prayers
+                        </a>
+                        <a href="emotions.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-smile"></i> Emotions
+                        </a>
+                        <a href="praise-wall.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                            <i class="hgi-stroke hgi-star"></i> Praise Wall
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="profile.html"
+                        class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                            class="w-8 h-8 rounded-full">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Header -->
+        <header
+            class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+            <div class="flex items-center gap-2">
+                <a href="dreams.html" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-arrow-left-02 text-2xl"></i>
+                </a>
+                <h1 class="text-xl font-bold text-gray-900">Record Dream</h1>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 pb-32">
+            <div class="max-w-3xl mx-auto">
+                <form class="space-y-6">
+                    <!-- Title & Date -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-pencil-edit-02 text-9xl text-blue-500"></i>
+                        </div>
+                        <div class="space-y-2 relative">
+                            <label class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                <i class="hgi-stroke hgi-pencil-edit-02 text-blue-500"></i> Dream Title
+                            </label>
+                            <div class="relative">
+                                <input type="text" placeholder="e.g., Flying over the mountains"
+                                    class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none">
+                                <i
+                                    class="hgi-stroke hgi-text-font absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                    <i class="hgi-stroke hgi-calendar-03 text-blue-500"></i> Date
+                                </label>
+                                <div class="relative">
+                                    <input type="date"
+                                        class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none">
+                                    <i
+                                        class="hgi-stroke hgi-calendar-03 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                    <i class="hgi-stroke hgi-clock-01 text-blue-500"></i> Time (Approx.)
+                                </label>
+                                <div class="relative">
+                                    <input type="time"
+                                        class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none">
+                                    <i
+                                        class="hgi-stroke hgi-clock-01 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emotion Selector -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-smile text-9xl text-orange-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2 relative">
+                            <i class="hgi-stroke hgi-smile text-orange-500"></i> How did you feel?
+                        </h3>
+                        <div class="flex items-center justify-between gap-2 overflow-x-auto pb-4 no-scrollbar relative">
+                            <button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-orange-200">
+                                    😊</div>
+                                <span
+                                    class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-orange-50 group-hover:text-orange-600 group-hover:border-orange-200 transition-colors">Calm</span>
+                            </button>
+                            <button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-blue-200">
+                                    😌</div>
+                                <span
+                                    class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-blue-50 group-hover:text-blue-600 group-hover:border-blue-200 transition-colors">Chill</span>
+                            </button>
+                            <button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-purple-200">
+                                    🚀</div>
+                                <span
+                                    class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-purple-50 group-hover:text-purple-600 group-hover:border-purple-200 transition-colors">Motivated</span>
+                            </button>
+                            <button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-yellow-200">
+                                    🙏</div>
+                                <span
+                                    class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-yellow-50 group-hover:text-yellow-600 group-hover:border-yellow-200 transition-colors">Grateful</span>
+                            </button>
+                            <button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100 group-hover:ring-green-200">
+                                    🤔</div>
+                                <span
+                                    class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-green-50 group-hover:text-green-600 group-hover:border-green-200 transition-colors">Curious</span>
+                            </button>
+                            <div id="customEmotionsContainer"></div>
+                            <button type="button" onclick="openEmotionModal()"
+                                class="flex flex-col items-center gap-3 group min-w-[70px]">
+                                <div
+                                    class="w-16 h-16 rounded-2xl border-2 border-dashed border-gray-300 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform group-hover:border-purple-400 group-hover:bg-purple-50">
+                                    <i class="hgi-stroke hgi-add-circle text-gray-400 group-hover:text-purple-600"></i>
+                                </div>
+                                <span
+                                    class="text-xs font-bold text-gray-600 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:bg-purple-50 group-hover:text-purple-600 group-hover:border-purple-200 transition-colors">Add
+                                    New</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-file-edit text-9xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2 relative">
+                            <i class="hgi-stroke hgi-file-edit text-purple-500"></i> Description
+                        </h3>
+                        <div class="relative">
+                            <textarea placeholder="Describe your dream in detail..."
+                                class="w-full h-48 bg-gray-50/50 border-none p-4 rounded-xl text-gray-700 placeholder-gray-400 focus:ring-0 resize-none text-base leading-relaxed outline-none font-medium"></textarea>
+                        </div>
+                        <div class="flex items-center gap-4 pt-4 border-t border-gray-100 relative">
+                            <button type="button"
+                                class="text-gray-500 hover:text-purple-600 transition-colors p-2.5 hover:bg-purple-50 rounded-xl bg-gray-50"><i
+                                    class="hgi-stroke hgi-link-02 text-xl"></i></button>
+                            <button type="button"
+                                class="text-gray-500 hover:text-purple-600 transition-colors p-2.5 hover:bg-purple-50 rounded-xl bg-gray-50"><i
+                                    class="hgi-stroke hgi-image-02 text-xl"></i></button>
+                            <button type="button"
+                                class="text-gray-500 hover:text-purple-600 transition-colors p-2.5 hover:bg-purple-50 rounded-xl bg-gray-50"><i
+                                    class="hgi-stroke hgi-mic-01 text-xl"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div
+                        class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                            <i class="hgi-stroke hgi-sparkles text-9xl text-teal-500"></i>
+                        </div>
+                        <div class="flex items-center justify-between relative">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 shadow-sm">
+                                    <i class="hgi-stroke hgi-sparkles text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-lg">Lucid Dream</h4>
+                                    <p class="text-sm text-gray-500 font-medium">Were you aware you were dreaming?</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer">
+                                <div
+                                    class="w-14 h-8 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-500/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-teal-500">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="space-y-2 relative">
+                            <label class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                <i class="hgi-stroke hgi-tags text-teal-500"></i> Tags
+                            </label>
+                            <div class="relative">
+                                <input type="text" placeholder="Add tags separated by commas..."
+                                    class="w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none">
+                                <i
+                                    class="hgi-stroke hgi-tags absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-2 relative">
+                            <label class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                <i class="hgi-stroke hgi-light-bulb text-teal-500"></i> Interpretation (Optional)
+                            </label>
+                            <div class="relative">
+                                <textarea placeholder="What do you think this dream means?"
+                                    class="w-full pl-11 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all outline-none resize-none h-28"></textarea>
+                                <i class="hgi-stroke hgi-light-bulb absolute left-4 top-6 text-gray-400 text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center gap-4 pt-4">
+                        <button type="button"
+                            class="flex-1 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all">Cancel</button>
+                        <button type="submit"
+                            class="flex-1 px-6 py-3 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">Save
+                            Dream</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-[100] flex justify-between items-center px-6 py-3">
+        <a href="index.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+        </a>
+        <a href="dreams.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+        </a>
+        <div class="relative -top-8">
+            <a href="record-dream.html"
+                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
+                <i class="hgi-stroke hgi-plus text-2xl"></i>
+            </a>
+        </div>
+        <a href="prayers.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+        </a>
+        <a href="profile.html"
+            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="hgi-stroke hgi-user text-2xl"></i>
+        </a>
+    </nav>
+
+    <!-- Add Emotion Modal -->
+    <div id="emotionModal"
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div
+                class="p-6 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white rounded-t-3xl">
+                <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+                    <i class="hgi-stroke hgi-add-circle text-purple-600"></i> Add Custom Emotion
+                </h3>
+                <button onclick="closeEmotionModal()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="hgi-stroke hgi-cancel-01 text-2xl text-gray-400"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-gray-900">Emotion Name</label>
+                    <input type="text" id="modalEmotionName" placeholder="e.g., Excited"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-gray-900">Emoji</label>
+                    <input type="text" id="modalEmotionEmoji" placeholder="😊" maxlength="2"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-3xl text-center focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-gray-900">Color</label>
+                    <div class="flex gap-2">
+                        <input type="color" id="modalEmotionColor" value="#8b5cf6"
+                            class="w-20 h-12 bg-white border border-gray-200 rounded-xl cursor-pointer">
+                        <input type="text" id="modalEmotionColorHex" value="#8b5cf6" placeholder="#8b5cf6"
+                            class="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all outline-none">
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-4">
+                    <button onclick="closeEmotionModal()"
+                        class="flex-1 px-6 py-3 bg-gray-100 text-gray-700 rounded-xl text-sm font-medium hover:bg-gray-200 transition-all">Cancel</button>
+                    <button onclick="addEmotionFromModal()"
+                        class="flex-1 px-6 py-3 bg-purple-600 text-white rounded-xl text-sm font-medium hover:bg-purple-700 transition-all shadow-lg shadow-purple-600/20"><i
+                            class="hgi-stroke hgi-add-circle"></i> Add Emotion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getEmotions() { const e = localStorage.getItem('customEmotions'); return e ? JSON.parse(e) : [] }
+        function saveEmotions(e) { localStorage.setItem('customEmotions', JSON.stringify(e)) }
+        function openEmotionModal() { document.getElementById('emotionModal').classList.remove('hidden') }
+        function closeEmotionModal() { document.getElementById('emotionModal').classList.add('hidden'); document.getElementById('modalEmotionName').value = ''; document.getElementById('modalEmotionEmoji').value = ''; document.getElementById('modalEmotionColor').value = '#8b5cf6'; document.getElementById('modalEmotionColorHex').value = '#8b5cf6' }
+        function addEmotionFromModal() { const name = document.getElementById('modalEmotionName').value.trim(); const emoji = document.getElementById('modalEmotionEmoji').value.trim(); const color = document.getElementById('modalEmotionColor').value; if (!name || !emoji) { alert('Please enter both emotion name and emoji'); return } const emotions = getEmotions(); emotions.push({ name, emoji, color, id: Date.now() }); saveEmotions(emotions); closeEmotionModal(); renderCustomEmotions() }
+        function renderCustomEmotions() { const emotions = getEmotions(); const container = document.getElementById('customEmotionsContainer'); if (!container) return; if (emotions.length === 0) { container.innerHTML = ''; return } container.innerHTML = emotions.map(emotion => { const colorLight = emotion.color + '20'; const colorMedium = emotion.color + '40'; return `<button type="button" class="flex flex-col items-center gap-3 group min-w-[70px]"><div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform border-2 border-white ring-2 ring-gray-100" style="background:linear-gradient(135deg,${colorLight},${colorMedium})">${emotion.emoji}</div><span class="text-xs font-bold text-gray-700 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200 group-hover:border-gray-300 transition-colors">${emotion.name}</span></button>` }).join('') }
+        document.getElementById('modalEmotionColor').addEventListener('input', e => document.getElementById('modalEmotionColorHex').value = e.target.value);
+        document.getElementById('modalEmotionColorHex').addEventListener('input', e => { const hex = e.target.value; if (/^#[0-9A-F]{6}$/i.test(hex)) document.getElementById('modalEmotionColor').value = hex });
+        document.getElementById('emotionModal').addEventListener('click', e => { if (e.target.id === 'emotionModal') closeEmotionModal() });
+        renderCustomEmotions();
+    </script>
+</body>
+
+</html>
