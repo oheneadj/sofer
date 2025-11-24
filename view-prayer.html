@@ -179,27 +179,34 @@
 
     <!-- Mobile Bottom Nav -->
     <nav
-        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-50 flex justify-between items-center px-6 py-3">
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 px-2 py-2 flex justify-between items-end">
         <a href="index.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Home</span>
         </a>
         <a href="dreams.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-moon text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Dreams</span>
         </a>
-        <div class="relative -top-8">
+
+        <div class="relative -top-6 mx-2">
             <button
-                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
-                <i class="hgi-stroke hgi-plus text-2xl"></i>
+                class="w-14 h-14 bg-gray-900 rounded-[20px] flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform">
+                <i class="hgi-stroke hgi-plus-sign text-2xl"></i>
             </button>
         </div>
-        <a href="prayers.html" class="flex flex-col items-center gap-1 text-primary">
-            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
+
+        <a href="prayers.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-primary transition-colors group">
+            <i class="hgi-stroke hgi-hand-prayer text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Prayers</span>
         </a>
         <a href="profile.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-user text-2xl"></i>
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-user text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Profile</span>
         </a>
     </nav>
 

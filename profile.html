@@ -65,7 +65,7 @@
                             class="pl-9 pr-4 py-1.5 bg-gray-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-48 transition-all">
                     </div>
                     <div class="h-6 w-px bg-gray-200"></div>
-                    <button id="notificationBtn"
+                    <button id="notificationBtnDesktop"
                         class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative">
                         <i class="hgi-stroke hgi-notification-02 text-xl"></i>
                         <span
@@ -93,6 +93,22 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Upgrade to Pro Banner -->
+                            <a href="upgrade.html"
+                                class="block p-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                                        <i class="hgi-stroke hgi-lightning-01 text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-sm">Upgrade to Pro</h4>
+                                        <p class="text-xs text-white/80">Unlock all features</p>
+                                    </div>
+                                    <i class="hgi-stroke hgi-arrow-right-01 text-white/60"></i>
+                                </div>
+                            </a>
+
                             <div class="p-2">
                                 <a href="profile.html"
                                     class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
@@ -104,20 +120,15 @@
                                     <i class="hgi-stroke hgi-pencil-edit-02 text-lg text-gray-400"></i>
                                     Edit Profile
                                 </a>
-                                <a href="#"
+                                <a href="settings.html"
                                     class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
-                                    <i class="hgi-stroke hgi-credit-card text-lg text-gray-400"></i>
-                                    Subscription
+                                    <i class="hgi-stroke hgi-settings-02 text-lg text-gray-400"></i>
+                                    Settings
                                 </a>
                                 <a href="#"
                                     class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
                                     <i class="hgi-stroke hgi-help-circle text-lg text-gray-400"></i>
                                     Help Center
-                                </a>
-                                <a href="settings.html"
-                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
-                                    <i class="hgi-stroke hgi-settings-02 text-lg text-gray-400"></i>
-                                    Settings
                                 </a>
                             </div>
                             <div class="p-2 border-t border-gray-50">
@@ -134,6 +145,13 @@
                                     </button>
                                 </div>
                             </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="landing.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-logout-02 text-lg"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,13 +162,20 @@
         <header
             class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
             <div class="flex items-center gap-2">
+                <button id="mobileMenuBtn" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-menu-01 text-2xl"></i>
+                </button>
                 <div
                     class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
                     <i class="hgi-stroke hgi-moon-02 text-lg"></i>
                 </div>
-                <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">Sofer</span>
             </div>
             <div class="flex items-center gap-3">
+                <button id="notificationBtnMobile" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg relative">
+                    <i class="hgi-stroke hgi-notification-02 text-xl"></i>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                </button>
                 <a href="settings.html" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
                     <i class="hgi-stroke hgi-settings-02 text-xl"></i>
                 </a>
@@ -440,10 +465,10 @@
                                 <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                                     Unlock advanced analytics, unlimited AI interpretations, and cloud backup.
                                 </p>
-                                <button
-                                    class="w-full py-3 bg-white text-gray-900 rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors shadow-lg shadow-white/10">
+                                <a href="upgrade.html"
+                                    class="block w-full py-3 bg-white text-gray-900 rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors shadow-lg shadow-white/10 text-center">
                                     Get Pro Access
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -454,39 +479,95 @@
         </main>
     </div>
 
-    <!-- Mobile Bottom Nav -->
-    <!-- Mobile Bottom Nav -->
-    <nav
-        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 px-2 py-2 flex justify-between items-end">
-        <a href="index.html"
-            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
-            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl group-hover:scale-110 transition-transform"></i>
-            <span class="text-[10px] font-medium">Home</span>
-        </a>
-        <a href="dreams.html"
-            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
-            <i class="hgi-stroke hgi-moon-stars text-2xl group-hover:scale-110 transition-transform"></i>
-            <span class="text-[10px] font-medium">Dreams</span>
-        </a>
 
-        <div class="relative -top-6 mx-2">
-            <button
-                class="w-14 h-14 bg-gray-900 rounded-[20px] flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform">
-                <i class="hgi-stroke hgi-plus-sign text-2xl"></i>
+
+    <!-- Mobile Menu Drawer Overlay -->
+    <div id="mobileMenuOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenuDrawer"
+        class="fixed inset-y-0 left-0 w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+            </div>
+            <button id="closeMobileMenuBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
             </button>
         </div>
 
-        <a href="prayers.html"
-            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
-            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl group-hover:scale-110 transition-transform"></i>
-            <span class="text-[10px] font-medium">Prayers</span>
-        </a>
-        <a href="profile.html"
-            class="flex-1 flex flex-col items-center gap-1 py-2 text-primary transition-colors group">
-            <i class="hgi-stroke hgi-user text-2xl group-hover:scale-110 transition-transform"></i>
-            <span class="text-[10px] font-medium">Profile</span>
-        </a>
-    </nav>
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-6">
+            <!-- Main Nav -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Navigation</h3>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-dashboard-square-01 text-xl"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="dreams.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-moon-stars text-xl"></i>
+                    <span class="font-medium">Dreams</span>
+                </a>
+                <a href="prayers.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-prayer-hands-02 text-xl"></i>
+                    <span class="font-medium">Prayers</span>
+                </a>
+                <a href="emotions.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-smile text-xl"></i>
+                    <span class="font-medium">Emotions</span>
+                </a>
+                <a href="praise-wall.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-star text-xl"></i>
+                    <span class="font-medium">Praise Wall</span>
+                </a>
+            </div>
+
+            <div class="h-px bg-gray-100"></div>
+
+            <!-- Account -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Account</h3>
+                <a href="profile.html"
+                    class="flex items-center gap-3 px-4 py-3 text-primary bg-primary/5 rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-user text-xl"></i>
+                    <span class="font-medium">Profile</span>
+                </a>
+                <a href="settings.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-settings-02 text-xl"></i>
+                    <span class="font-medium">Settings</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-help-circle text-xl"></i>
+                    <span class="font-medium">Help Center</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <a href="landing.html"
+                class="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                <i class="hgi-stroke hgi-logout-02 text-xl"></i>
+                <span class="font-medium">Logout</span>
+            </a>
+        </div>
+    </div>
 
     <!-- Notification Drawer Overlay -->
     <div id="notificationOverlay"
@@ -586,8 +667,32 @@
     </div>
 
     <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+        const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function toggleMobileMenu() {
+            const isHidden = mobileMenuDrawer.classList.contains('-translate-x-full');
+            if (isHidden) {
+                mobileMenuDrawer.classList.remove('-translate-x-full');
+                mobileMenuOverlay.classList.remove('hidden');
+                setTimeout(() => mobileMenuOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                mobileMenuDrawer.classList.add('-translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0');
+                setTimeout(() => mobileMenuOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+
         // Notification Drawer Logic
-        const notificationBtn = document.getElementById('notificationBtn');
+        const notificationBtnDesktop = document.getElementById('notificationBtnDesktop');
+        const notificationBtnMobile = document.getElementById('notificationBtnMobile');
         const closeNotificationBtn = document.getElementById('closeNotificationBtn');
         const notificationDrawer = document.getElementById('notificationDrawer');
         const notificationOverlay = document.getElementById('notificationOverlay');
@@ -605,7 +710,8 @@
             }
         }
 
-        notificationBtn.addEventListener('click', toggleNotificationDrawer);
+        if (notificationBtnDesktop) notificationBtnDesktop.addEventListener('click', toggleNotificationDrawer);
+        if (notificationBtnMobile) notificationBtnMobile.addEventListener('click', toggleNotificationDrawer);
         closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
         notificationOverlay.addEventListener('click', toggleNotificationDrawer);
 

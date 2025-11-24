@@ -55,6 +55,13 @@
                 </div>
 
                 <div class="flex items-center gap-4">
+                    <div class="h-6 w-px bg-gray-200"></div>
+                    <button id="notificationBtnDesktop"
+                        class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative">
+                        <i class="hgi-stroke hgi-notification-02 text-xl"></i>
+                        <span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
                     <a href="profile.html"
                         class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
                         <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
@@ -68,10 +75,24 @@
         <header
             class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
             <div class="flex items-center gap-2">
-                <a href="prayers.html" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
-                    <i class="hgi-stroke hgi-arrow-left-02 text-2xl"></i>
+                <button id="mobileMenuBtn" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-menu-01 text-2xl"></i>
+                </button>
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="notificationBtnMobile" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg relative">
+                    <i class="hgi-stroke hgi-notification-02 text-xl"></i>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                </button>
+                <a href="profile.html">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                        class="w-8 h-8 rounded-full">
                 </a>
-                <h1 class="text-xl font-bold text-gray-900">Add Prayer</h1>
             </div>
         </header>
 
@@ -192,30 +213,7 @@
     </div>
 
     <!-- Mobile Bottom Nav -->
-    <nav
-        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-2xl z-50 flex justify-between items-center px-6 py-3">
-        <a href="index.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl"></i>
-        </a>
-        <a href="dreams.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-moon-stars text-2xl"></i>
-        </a>
-        <div class="relative -top-8">
-            <button
-                class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform border-4 border-gray-50">
-                <i class="hgi-stroke hgi-plus text-2xl"></i>
-            </button>
-        </div>
-        <a href="prayers.html" class="flex flex-col items-center gap-1 text-primary">
-            <i class="hgi-stroke hgi-prayer-hands-02 text-2xl"></i>
-        </a>
-        <a href="profile.html"
-            class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
-            <i class="hgi-stroke hgi-user text-2xl"></i>
-        </a>
-    </nav>
+    <!-- Mobile Bottom Nav Removed -->
 
     <!-- Add Tag Modal -->
     <div id="tagModal"
@@ -399,5 +397,241 @@
             if (e.target.id === 'tagModal') closeTagModal();
         });
     </script>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+        const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function toggleMobileMenu() {
+            const isHidden = mobileMenuDrawer.classList.contains('-translate-x-full');
+            if (isHidden) {
+                mobileMenuDrawer.classList.remove('-translate-x-full');
+                mobileMenuOverlay.classList.remove('hidden');
+                setTimeout(() => mobileMenuOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                mobileMenuDrawer.classList.add('-translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0');
+                setTimeout(() => mobileMenuOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+
+        // Notification Drawer Logic
+        const notificationBtnDesktop = document.getElementById('notificationBtnDesktop');
+        const notificationBtnMobile = document.getElementById('notificationBtnMobile');
+        const closeNotificationBtn = document.getElementById('closeNotificationBtn');
+        const notificationDrawer = document.getElementById('notificationDrawer');
+        const notificationOverlay = document.getElementById('notificationOverlay');
+
+        function toggleNotificationDrawer() {
+            const isHidden = notificationDrawer.classList.contains('translate-x-full');
+            if (isHidden) {
+                notificationDrawer.classList.remove('translate-x-full');
+                notificationOverlay.classList.remove('hidden');
+                setTimeout(() => notificationOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                notificationDrawer.classList.add('translate-x-full');
+                notificationOverlay.classList.add('opacity-0');
+                setTimeout(() => notificationOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        if (notificationBtnDesktop) notificationBtnDesktop.addEventListener('click', toggleNotificationDrawer);
+        if (notificationBtnMobile) notificationBtnMobile.addEventListener('click', toggleNotificationDrawer);
+        if (closeNotificationBtn) closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
+        if (notificationOverlay) notificationOverlay.addEventListener('click', toggleNotificationDrawer);
+    </script>
+
+    <!-- Mobile Menu Drawer Overlay -->
+    <div id="mobileMenuOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenuDrawer"
+        class="fixed inset-y-0 left-0 w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+            </div>
+            <button id="closeMobileMenuBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-6">
+            <!-- Main Nav -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Navigation</h3>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-dashboard-square-01 text-xl"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="dreams.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-moon-stars text-xl"></i>
+                    <span class="font-medium">Dreams</span>
+                </a>
+                <a href="prayers.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-prayer-hands-02 text-xl"></i>
+                    <span class="font-medium">Prayers</span>
+                </a>
+                <a href="emotions.html"
+                    class="flex items-center gap-3 px-4 py-3 text-primary bg-primary/5 rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-smile text-xl"></i>
+                    <span class="font-medium">Emotions</span>
+                </a>
+                <a href="praise-wall.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-star text-xl"></i>
+                    <span class="font-medium">Praise Wall</span>
+                </a>
+            </div>
+
+            <div class="h-px bg-gray-100"></div>
+
+            <!-- Account -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Account</h3>
+                <a href="profile.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-user text-xl"></i>
+                    <span class="font-medium">Profile</span>
+                </a>
+                <a href="settings.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-settings-02 text-xl"></i>
+                    <span class="font-medium">Settings</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-help-circle text-xl"></i>
+                    <span class="font-medium">Help Center</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <a href="landing.html"
+                class="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                <i class="hgi-stroke hgi-logout-02 text-xl"></i>
+                <span class="font-medium">Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Notification Drawer Overlay -->
+    <div id="notificationOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Notification Drawer -->
+    <div id="notificationDrawer"
+        class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-white shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-white sticky top-0 z-10">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold text-gray-900">Notifications</h2>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">3 new</span>
+            </div>
+            <button id="closeNotificationBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+
+            <!-- Smart Insight -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-5 border border-blue-100">
+                <div class="flex items-start gap-3 mb-3">
+                    <i class="hgi-stroke hgi-ai-magic text-blue-600 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm mb-1">Smart Insight</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">You haven't logged a dream in 3 days. Usually,
+                            you log them on Monday mornings.</p>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-2 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                    Log a Dream
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex p-1 bg-gray-100 rounded-xl">
+                <button
+                    class="flex-1 py-1.5 text-sm font-medium text-gray-900 bg-white rounded-lg shadow-sm">All</button>
+                <button class="flex-1 py-1.5 text-sm font-medium text-gray-500 hover:text-gray-700">Mentions</button>
+            </div>
+
+            <!-- List -->
+            <div class="space-y-4">
+                <!-- Item -->
+                <div
+                    class="flex gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 transition-colors shadow-sm">
+                    <div class="flex-shrink-0">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=random"
+                            class="w-10 h-10 rounded-full">
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900"><span class="font-bold">Sarah Chen</span> commented on your
+                                dream</p>
+                            <span class="text-xs text-gray-400">2h</span>
+                        </div>
+                        <p class="text-xs text-gray-500 line-clamp-2 mb-2">"This is really interesting! I had a similar
+                            dream about flying..."</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-2 py-0.5 bg-gray-100 text-gray-600 text-[10px] font-bold rounded uppercase tracking-wider">Dream</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="flex gap-4 p-4 rounded-2xl bg-blue-50/50 border border-blue-100 transition-colors">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                            <i class="hgi-stroke hgi-notification-03"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900 font-medium">System Update</p>
+                            <span class="text-xs text-gray-400">5h</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mb-2">New features are available for your prayer journal.</p>
+                        <button class="text-xs font-bold text-blue-600 hover:underline">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <button class="w-full py-3 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Mark all as read
+            </button>
+        </div>
+    </div>
+</body>
 
 </html>

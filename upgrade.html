@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade to Pro - DreamLog</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+    </style>
+</head>
+
+<body class="bg-white font-sans text-gray-900 selection:bg-yellow-200 selection:text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                    <i class="hgi-stroke hgi-moon-02 text-xl"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">DreamLog</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-gray-600 hover:text-gray-900">Features</a>
+                <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-gray-900">Pricing</a>
+                <a href="#testimonials" class="text-sm font-medium text-gray-600 hover:text-gray-900">Stories</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-sm font-bold text-gray-900 hover:text-primary">Log in</a>
+                <button
+                    class="px-5 py-2.5 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5">
+                    Get Pro
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-bold mb-8 rotate-[-2deg] hover:rotate-0 transition-transform cursor-default">
+                    <i class="hgi-stroke hgi-sparkles"></i> New: AI Dream Analysis
+                </div>
+                <h1 class="text-6xl md:text-7xl font-black tracking-tight mb-8 leading-tight text-gray-900">
+                    Unlock the <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">hidden
+                        meaning</span><br>
+                    of your dreams.
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Join 5M+ dreamers who use DreamLog to track patterns, interpret symbols, and deepen their spiritual
+                    journey.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button
+                        class="px-8 py-4 bg-gray-900 text-white rounded-2xl text-lg font-bold hover:bg-gray-800 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2">
+                        <i class="hgi-stroke hgi-apple text-xl"></i>
+                        Download on App Store
+                    </button>
+                    <button
+                        class="px-8 py-4 bg-white text-gray-900 border-2 border-gray-200 rounded-2xl text-lg font-bold hover:border-gray-300 hover:bg-gray-50 transition-all flex items-center gap-2">
+                        <i class="hgi-stroke hgi-play-store text-xl"></i>
+                        Get it on Google Play
+                    </button>
+                </div>
+                <div class="mt-8 flex items-center justify-center gap-2 text-sm text-gray-500">
+                    <div class="flex -space-x-2">
+                        <img src="https://ui-avatars.com/api/?name=Alex&background=random"
+                            class="w-6 h-6 rounded-full border-2 border-white">
+                        <img src="https://ui-avatars.com/api/?name=Sam&background=random"
+                            class="w-6 h-6 rounded-full border-2 border-white">
+                        <img src="https://ui-avatars.com/api/?name=Jo&background=random"
+                            class="w-6 h-6 rounded-full border-2 border-white">
+                    </div>
+                    <p>Loved by 10,000+ spiritual seekers</p>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Decorative Blobs -->
+                <div
+                    class="absolute -top-20 -left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+                </div>
+                <div
+                    class="absolute -top-20 -right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-20 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000">
+                </div>
+
+                <!-- Main App Mockup -->
+                <div class="relative bg-white rounded-[1rem] shadow-2xl border-4 border-gray-900 overflow-hidden">
+                    <div class="h-[500px] md:h-[600px] overflow-y-auto scrollbar-hide">
+                        <img src="images/screencapture-sofer-test-index-html-2025-11-24-07_30_13.png"
+                            alt="Sofer Dashboard" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-12 border-y border-gray-100 bg-gray-50/50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Trusted by dreamers from</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Simple Text Logos for Demo -->
+                <span class="text-2xl font-black text-gray-800">NETFLIX</span>
+                <span class="text-2xl font-black text-gray-800">Spotify</span>
+                <span class="text-2xl font-black text-gray-800">Headspace</span>
+                <span class="text-2xl font-black text-gray-800">Calm</span>
+                <span class="text-2xl font-black text-gray-800">Notion</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 1: AI Interpretation -->
+    <section id="features" class="py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div
+                        class="absolute inset-0 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
+                    </div>
+                    <div
+                        class="relative bg-white rounded-[2rem] shadow-2xl border border-gray-100 p-2 transform -rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden max-w-md mx-auto">
+                        <div class="h-[800px] md:h-[800px] overflow-y-auto scrollbar-hide rounded-3xl">
+                            <img src="images/screencapture-sofer-test-view-dream-html-2025-11-24-07_39_15.png"
+                                alt="Dream Analysis" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <i class="hgi-stroke hgi-ai-magic"></i> AI Analysis
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                        Decode the language<br>of your subconscious.
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Don't just log your dreams—understand them. Our advanced AI analyzes symbols, emotions, and
+                        themes to provide deep, personalized interpretations instantly.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-700 font-medium">
+                            <i class="hgi-stroke hgi-check-circle text-green-500 text-xl"></i>
+                            Biblical & Psychological perspectives
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-medium">
+                            <i class="hgi-stroke hgi-check-circle text-green-500 text-xl"></i>
+                            Identify recurring symbols
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-medium">
+                            <i class="hgi-stroke hgi-check-circle text-green-500 text-xl"></i>
+                            Actionable spiritual insights
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 2: Analytics -->
+    <section class="py-32 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <i class="hgi-stroke hgi-chart-bar-01"></i> Insights
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                        Visualize your<br>spiritual growth.
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Track your mood, prayer consistency, and dream clarity over time. See the patterns that shape
+                        your spiritual life.
+                    </p>
+                    <button
+                        class="text-pink-600 font-bold text-lg flex items-center gap-2 hover:gap-4 transition-all group">
+                        Explore Analytics <i
+                            class="hgi-stroke hgi-arrow-right-01 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+                <div class="relative">
+                    <!-- Analytics Card Mock -->
+                    <div
+                        class="bg-white rounded-[2.5rem] p-2 shadow-2xl border border-gray-100 relative z-10 overflow-hidden max-w-md mx-auto">
+                        <div class="h-[800px] md:h-[800px] overflow-y-auto scrollbar-hide rounded-3xl">
+                            <img src="images/sofer-test-praise-wall-mobile.png" alt="Analytics View"
+                                class="w-full h-auto">
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">Simple, transparent pricing</h2>
+                <p class="text-xl text-gray-600">Start for free, upgrade for power. No hidden fees.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Comparison Table (Desktop) -->
+                <div
+                    class="hidden lg:block col-span-12 bg-white rounded-[2.5rem] border border-gray-200 shadow-xl overflow-hidden">
+                    <div class="grid grid-cols-4 p-8 bg-gray-50 border-b border-gray-200">
+                        <div class="col-span-2">
+                            <h3 class="text-2xl font-bold text-gray-900">Compare Plans</h3>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-gray-900">Free</h3>
+                            <p class="text-sm text-gray-500">Forever</p>
+                        </div>
+                        <div class="text-center relative">
+                            <div
+                                class="absolute -top-6 left-1/2 -translate-x-1/2 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-b-lg shadow-sm">
+                                RECOMMENDED</div>
+                            <h3 class="text-xl font-bold text-indigo-600">Pro</h3>
+                            <p class="text-sm text-gray-500">$9.99/mo</p>
+                        </div>
+                    </div>
+
+                    <!-- Rows -->
+                    <div class="divide-y divide-gray-100">
+                        <!-- Row -->
+                        <div class="grid grid-cols-4 p-6 hover:bg-gray-50 transition-colors">
+                            <div class="col-span-2 flex items-center gap-2">
+                                <span class="font-medium text-gray-700">Dream Entries</span>
+                                <i class="hgi-stroke hgi-information-circle text-gray-400"></i>
+                            </div>
+                            <div class="text-center text-gray-600">Unlimited</div>
+                            <div class="text-center font-bold text-indigo-600">Unlimited</div>
+                        </div>
+                        <!-- Row -->
+                        <div class="grid grid-cols-4 p-6 hover:bg-gray-50 transition-colors">
+                            <div class="col-span-2 flex items-center gap-2">
+                                <span class="font-medium text-gray-700">AI Interpretations</span>
+                            </div>
+                            <div class="text-center text-gray-600">3 / month</div>
+                            <div class="text-center font-bold text-indigo-600">Unlimited</div>
+                        </div>
+                        <!-- Row -->
+                        <div class="grid grid-cols-4 p-6 hover:bg-gray-50 transition-colors">
+                            <div class="col-span-2 flex items-center gap-2">
+                                <span class="font-medium text-gray-700">Advanced Analytics</span>
+                            </div>
+                            <div class="text-center text-gray-300"><i class="hgi-stroke hgi-minus"></i></div>
+                            <div class="text-center font-bold text-indigo-600"><i
+                                    class="hgi-stroke hgi-tick-02 text-xl"></i></div>
+                        </div>
+                        <!-- Row -->
+                        <div class="grid grid-cols-4 p-6 hover:bg-gray-50 transition-colors">
+                            <div class="col-span-2 flex items-center gap-2">
+                                <span class="font-medium text-gray-700">Cloud Backup</span>
+                            </div>
+                            <div class="text-center text-gray-300"><i class="hgi-stroke hgi-minus"></i></div>
+                            <div class="text-center font-bold text-indigo-600"><i
+                                    class="hgi-stroke hgi-tick-02 text-xl"></i></div>
+                        </div>
+                        <!-- Row -->
+                        <div class="grid grid-cols-4 p-6 hover:bg-gray-50 transition-colors">
+                            <div class="col-span-2 flex items-center gap-2">
+                                <span class="font-medium text-gray-700">Priority Support</span>
+                            </div>
+                            <div class="text-center text-gray-300"><i class="hgi-stroke hgi-minus"></i></div>
+                            <div class="text-center font-bold text-indigo-600"><i
+                                    class="hgi-stroke hgi-tick-02 text-xl"></i></div>
+                        </div>
+                        <!-- CTA Row -->
+                        <div class="grid grid-cols-4 p-8 bg-gray-50">
+                            <div class="col-span-2"></div>
+                            <div class="px-4">
+                                <button
+                                    class="w-full py-3 bg-white border border-gray-200 text-gray-900 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+                                    Current Plan
+                                </button>
+                            </div>
+                            <div class="px-4">
+                                <button
+                                    class="w-full py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">
+                                    Upgrade Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Pricing Cards (Visible only on mobile) -->
+                <div class="lg:hidden col-span-1 space-y-6">
+                    <!-- Free Card -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free</h3>
+                        <p class="text-gray-500 mb-6">Forever free for basic use</p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><i class="hgi-stroke hgi-tick-02 text-green-500"></i>
+                                Unlimited Entries</li>
+                            <li class="flex items-center gap-3"><i class="hgi-stroke hgi-tick-02 text-green-500"></i> 3
+                                AI Interpretations</li>
+                        </ul>
+                        <button class="w-full py-3 bg-gray-100 text-gray-900 rounded-xl font-bold">Current Plan</button>
+                    </div>
+                    <!-- Pro Card -->
+                    <div class="bg-gray-900 rounded-3xl p-8 text-white relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-xl">
+                            POPULAR</div>
+                        <h3 class="text-2xl font-bold mb-2">Pro</h3>
+                        <p class="text-gray-400 mb-6">Unlock full potential</p>
+                        <div class="text-4xl font-bold mb-6">$9.99<span
+                                class="text-lg text-gray-500 font-normal">/mo</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><i class="hgi-stroke hgi-tick-02 text-green-400"></i>
+                                Unlimited AI</li>
+                            <li class="flex items-center gap-3"><i class="hgi-stroke hgi-tick-02 text-green-400"></i>
+                                Advanced Analytics</li>
+                            <li class="flex items-center gap-3"><i class="hgi-stroke hgi-tick-02 text-green-400"></i>
+                                Cloud Backup</li>
+                        </ul>
+                        <button
+                            class="w-full py-3 bg-indigo-500 text-white rounded-xl font-bold hover:bg-indigo-600">Upgrade
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section id="testimonials" class="py-32 bg-yellow-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">Don't just take our word for it</h2>
+                <p class="text-xl text-gray-600">Join the community of awakened dreamers.</p>
+            </div>
+
+            <div class="flex gap-6 overflow-x-auto pb-8 snap-x">
+                <!-- Card 1 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-[2rem] shadow-lg snap-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/prayer-journal.jpg"
+                            class="w-14 h-14 rounded-full object-cover ring-4 ring-yellow-100">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Jenkins</h4>
+                            <p class="text-sm text-gray-500">Pro User since 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">"I never realized how much my dreams were trying to
+                        tell me until I started using DreamLog. The AI interpretations are scarily accurate!"</p>
+                    <div class="flex gap-1 mt-6 text-yellow-400">
+                        <i class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-[2rem] shadow-lg snap-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/blue-moonlight.jpg"
+                            class="w-14 h-14 rounded-full object-cover ring-4 ring-blue-100">
+                        <div>
+                            <h4 class="font-bold text-gray-900">David Chen</h4>
+                            <p class="text-sm text-gray-500">Pastor & Author</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">"A fantastic tool for spiritual discipline. The
+                        prayer tracking feature helps me stay consistent in my intercession."</p>
+                    <div class="flex gap-1 mt-6 text-yellow-400">
+                        <i class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-[2rem] shadow-lg snap-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="images/meditation-moon.jpg"
+                            class="w-14 h-14 rounded-full object-cover ring-4 ring-purple-100">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Elena Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Lucid Dreamer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed italic">"The analytics are a game changer. I can finally see
+                        the connection between my daily mood and my dream vividness."</p>
+                    <div class="flex gap-1 mt-6 text-yellow-400">
+                        <i class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i><i
+                            class="hgi-stroke hgi-star fill-current"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-32">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-center text-gray-900 mb-16">Got questions?</h2>
+            <div class="space-y-4">
+                <details
+                    class="group bg-gray-50 rounded-2xl p-6 cursor-pointer open:bg-white open:shadow-lg transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        Can I cancel my subscription anytime?
+                        <span class="transition group-open:rotate-180"><i
+                                class="hgi-stroke hgi-arrow-down-01"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes, absolutely. There are no lock-in contracts. You
+                        can cancel your Pro subscription at any time from your settings page.</p>
+                </details>
+                <details
+                    class="group bg-gray-50 rounded-2xl p-6 cursor-pointer open:bg-white open:shadow-lg transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        Is my data private?
+                        <span class="transition group-open:rotate-180"><i
+                                class="hgi-stroke hgi-arrow-down-01"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Your privacy is our top priority. All your dreams and
+                        journals are encrypted end-to-end. We do not sell your data to third parties.</p>
+                </details>
+                <details
+                    class="group bg-gray-50 rounded-2xl p-6 cursor-pointer open:bg-white open:shadow-lg transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        Does the AI work for all types of dreams?
+                        <span class="transition group-open:rotate-180"><i
+                                class="hgi-stroke hgi-arrow-down-01"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes! Our AI is trained on a vast library of
+                        psychological and spiritual symbolism, making it effective for nightmares, lucid dreams,
+                        recurring dreams, and more.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="py-20 px-6 bg-gray-900 text-white rounded-t-[3rem] mt-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block p-4 bg-white/10 rounded-2xl mb-8 backdrop-blur-sm">
+                <i class="hgi-stroke hgi-moon-02 text-4xl text-yellow-300"></i>
+            </div>
+            <h2 class="text-5xl md:text-6xl font-black mb-8 leading-tight">Start your spiritual journey today.</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Join the world's most advanced dream journaling
+                platform and discover what your subconscious is trying to tell you.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button
+                    class="px-10 py-5 bg-white text-gray-900 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all shadow-2xl hover:-translate-y-1">
+                    Get Started for Free
+                </button>
+            </div>
+            <div
+                class="mt-20 pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+                <p>&copy; 2024 DreamLog. All rights reserved.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"><i
+                            class="hgi-stroke hgi-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"><i
+                            class="hgi-stroke hgi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations -->
+    <style>
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(6deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(6deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(6deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+
+</body>
+
+</html>
