@@ -115,7 +115,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 pb-32 md:pb-8">
             <div class="max-w-7xl mx-auto space-y-8">
 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -683,7 +683,33 @@
         </a>
 
         <div class="relative -top-6 mx-2">
-            <button
+            <!-- Create Menu Popup -->
+            <div id="createMenu"
+                class="absolute bottom-16 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 w-48 hidden opacity-0 transition-opacity duration-200">
+                <a href="record-dream.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-xl transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center">
+                        <i class="hgi-stroke hgi-moon-02 text-indigo-600"></i>
+                    </div>
+                    <span class="font-medium text-sm">Record Dream</span>
+                </a>
+                <a href="record-prayer.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
+                        <i class="hgi-stroke hgi-prayer-hands-02 text-purple-600"></i>
+                    </div>
+                    <span class="font-medium text-sm">Add Prayer</span>
+                </a>
+                <a href="log-mood.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-xl transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center">
+                        <i class="hgi-stroke hgi-smile text-pink-600"></i>
+                    </div>
+                    <span class="font-medium text-sm">Log Mood</span>
+                </a>
+            </div>
+
+            <button id="createBtn"
                 class="w-14 h-14 bg-gray-900 rounded-[20px] flex items-center justify-center text-white shadow-xl hover:scale-105 transition-transform">
                 <i class="hgi-stroke hgi-plus-sign text-2xl"></i>
             </button>
@@ -1207,6 +1233,32 @@
     if (streakBtn) streakBtn.addEventListener('click', toggleStreakDrawer);
     if (closeStreakBtn) closeStreakBtn.addEventListener('click', toggleStreakDrawer);
     if (streakOverlay) streakOverlay.addEventListener('click', toggleStreakDrawer);
+
+    // Create Menu Logic
+    const createBtn = document.getElementById('createBtn');
+    const createMenu = document.getElementById('createMenu');
+
+    if (createBtn && createMenu) {
+        createBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = createMenu.classList.contains('hidden');
+            if (isHidden) {
+                createMenu.classList.remove('hidden');
+                setTimeout(() => createMenu.classList.remove('opacity-0'), 10);
+            } else {
+                createMenu.classList.add('opacity-0');
+                setTimeout(() => createMenu.classList.add('hidden'), 200);
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!createMenu.contains(e.target) && !createBtn.contains(e.target)) {
+                createMenu.classList.add('opacity-0');
+                setTimeout(() => createMenu.classList.add('hidden'), 200);
+            }
+        });
+    }
 </script>
 </body>
 
