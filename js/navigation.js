@@ -21,9 +21,9 @@ function initMobileMenu() {
         }
     }
 
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuBtn && mobileMenuDrawer && mobileMenuOverlay) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (closeMobileMenuBtn && mobileMenuDrawer && mobileMenuOverlay) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuOverlay && mobileMenuDrawer) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
 }
 
 // Notification Drawer Logic
@@ -35,6 +35,8 @@ function initNotificationDrawer() {
     const notificationOverlay = document.getElementById('notificationOverlay');
 
     function toggleNotificationDrawer() {
+        if (!notificationDrawer || !notificationOverlay) return;
+
         const isHidden = notificationDrawer.classList.contains('translate-x-full');
         if (isHidden) {
             notificationDrawer.classList.remove('translate-x-full');
@@ -47,10 +49,10 @@ function initNotificationDrawer() {
         }
     }
 
-    if (notificationBtnDesktop) notificationBtnDesktop.addEventListener('click', toggleNotificationDrawer);
-    if (notificationBtnMobile) notificationBtnMobile.addEventListener('click', toggleNotificationDrawer);
-    if (closeNotificationBtn) closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
-    if (notificationOverlay) notificationOverlay.addEventListener('click', toggleNotificationDrawer);
+    if (notificationBtnDesktop && notificationDrawer && notificationOverlay) notificationBtnDesktop.addEventListener('click', toggleNotificationDrawer);
+    if (notificationBtnMobile && notificationDrawer && notificationOverlay) notificationBtnMobile.addEventListener('click', toggleNotificationDrawer);
+    if (closeNotificationBtn && notificationDrawer && notificationOverlay) closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
+    if (notificationOverlay && notificationDrawer) notificationOverlay.addEventListener('click', toggleNotificationDrawer);
 }
 
 // Create Menu Logic
@@ -89,6 +91,8 @@ function initStreakDrawer() {
     const streakOverlay = document.getElementById('streakOverlay');
 
     function toggleStreakDrawer() {
+        if (!streakDrawer || !streakOverlay) return;
+
         const isHidden = streakDrawer.classList.contains('translate-y-full');
         if (isHidden) {
             streakDrawer.classList.remove('translate-y-full');
@@ -101,9 +105,9 @@ function initStreakDrawer() {
         }
     }
 
-    if (streakBtn) streakBtn.addEventListener('click', toggleStreakDrawer);
-    if (closeStreakBtn) closeStreakBtn.addEventListener('click', toggleStreakDrawer);
-    if (streakOverlay) streakOverlay.addEventListener('click', toggleStreakDrawer);
+    if (streakBtn && streakDrawer && streakOverlay) streakBtn.addEventListener('click', toggleStreakDrawer);
+    if (closeStreakBtn && streakDrawer && streakOverlay) closeStreakBtn.addEventListener('click', toggleStreakDrawer);
+    if (streakOverlay && streakDrawer) streakOverlay.addEventListener('click', toggleStreakDrawer);
 }
 
 // Profile Dropdown Logic

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Seer</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <style>
+        .component-section {
+            @apply mb-24 scroll-mt-32;
+        }
+
+        .component-title {
+            @apply text-3xl font-black text-gray-900 mb-8 pb-4 border-b border-gray-200 flex items-center gap-3;
+        }
+
+        .preview-card {
+            @apply bg-white border border-gray-200 rounded-2xl p-10 mb-8 shadow-sm;
+        }
+
+        /* Code Block Styling */
+        .code-wrapper {
+            @apply mt-8 rounded-xl overflow-hidden border border-gray-800 bg-gray-900 shadow-2xl;
+        }
+
+        .code-header {
+            @apply flex items-center justify-between px-4 py-2.5 bg-gray-800 border-b border-gray-700;
+        }
+
+        .hljs {
+            @apply !bg-transparent !p-6 !font-mono !text-sm !leading-relaxed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white border-r border-gray-200 fixed h-full overflow-y-auto hidden lg:block z-50">
+            <div class="p-6">
+                <div class="flex items-center gap-2 mb-8">
+                    <div
+                        class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                        <i class="hgi-stroke hgi-paint-board text-lg"></i>
+                    </div>
+                    <span class="text-lg font-bold text-gray-900 tracking-tight">Design System</span>
+                </div>
+
+                <nav class="space-y-1">
+                    <a href="#typography"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-text-font"></i> Typography
+                    </a>
+                    <a href="#colors"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-color-picker"></i> Colors
+                    </a>
+                    <a href="#buttons"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-cursor-click-02"></i> Buttons
+                    </a>
+                    <a href="#inputs"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-form-01"></i> Inputs & Forms
+                    </a>
+                    <a href="#cards"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-layout-01"></i> Cards
+                    </a>
+                    <a href="#navigation"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-menu-01"></i> Navigation
+                    </a>
+                    <a href="#feedback"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-notification-02"></i> Feedback
+                    </a>
+                    <a href="#components"
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                        <i class="hgi-stroke hgi-layers-01"></i> Components
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64 p-8 lg:p-12 max-w-7xl mx-auto">
+
+            <!-- Header -->
+            <div class="mb-16">
+                <h1 class="text-4xl font-black text-gray-900 mb-4">Seer Design System</h1>
+                <p class="text-xl text-gray-600 max-w-3xl">
+                    A comprehensive guide to the UI components, patterns, and styles used across the Seer application.
+                    Use this as a reference when building new features to ensure consistency.
+                </p>
+            </div>
+
+            <!-- Typography -->
+            <section id="typography" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-text-font text-primary"></i> Typography
+                </h2>
+                <div class="preview-card space-y-8">
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-2">Headings</p>
+                        <h1 class="text-4xl font-black text-gray-900 mb-2">Heading 1 (Display)</h1>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Heading 2 (Page Title)</h2>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Heading 3 (Section Title)</h3>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Heading 4 (Card Title)</h4>
+                        <h5 class="text-lg font-bold text-gray-900">Heading 5 (Subtitle)</h5>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-2">Body Text</p>
+                        <p class="text-base text-gray-600 mb-4">
+                            Body Regular: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Body Small: Used for secondary text, captions, and metadata. It provides context without
+                            distracting from the main content.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-2">Special Styles</p>
+                        <h1
+                            class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-4">
+                            Gradient Text
+                        </h1>
+                        <p class="font-serif italic text-xl text-gray-700">
+                            "Serif Italic for quotes and scripture verses."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colors -->
+            <section id="colors" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-color-picker text-primary"></i> Colors
+                </h2>
+                <div class="preview-card">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Primary -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-indigo-50"></div>
+                            <div class="h-20 rounded-xl bg-indigo-100"></div>
+                            <div class="h-20 rounded-xl bg-indigo-500"></div>
+                            <div class="h-20 rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/30"></div>
+                            <p class="text-sm font-medium text-center mt-2">Primary (Indigo)</p>
+                        </div>
+                        <!-- Secondary/Accent -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-purple-50"></div>
+                            <div class="h-20 rounded-xl bg-purple-100"></div>
+                            <div class="h-20 rounded-xl bg-purple-500"></div>
+                            <div class="h-20 rounded-xl bg-purple-600 shadow-lg shadow-purple-500/30"></div>
+                            <p class="text-sm font-medium text-center mt-2">Secondary (Purple)</p>
+                        </div>
+                        <!-- Success -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-emerald-50"></div>
+                            <div class="h-20 rounded-xl bg-emerald-100"></div>
+                            <div class="h-20 rounded-xl bg-emerald-500"></div>
+                            <div class="h-20 rounded-xl bg-emerald-600 shadow-lg shadow-emerald-500/30"></div>
+                            <p class="text-sm font-medium text-center mt-2">Success (Emerald)</p>
+                        </div>
+                        <!-- Warning -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-amber-50"></div>
+                            <div class="h-20 rounded-xl bg-amber-100"></div>
+                            <div class="h-20 rounded-xl bg-amber-500"></div>
+                            <div class="h-20 rounded-xl bg-amber-600 shadow-lg shadow-amber-500/30"></div>
+                            <p class="text-sm font-medium text-center mt-2">Warning (Amber)</p>
+                        </div>
+                        <!-- Danger -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-red-50"></div>
+                            <div class="h-20 rounded-xl bg-red-100"></div>
+                            <div class="h-20 rounded-xl bg-red-500"></div>
+                            <div class="h-20 rounded-xl bg-red-600 shadow-lg shadow-red-500/30"></div>
+                            <p class="text-sm font-medium text-center mt-2">Danger (Red)</p>
+                        </div>
+                        <!-- Grayscale -->
+                        <div class="space-y-2">
+                            <div class="h-20 rounded-xl bg-gray-50 border border-gray-100"></div>
+                            <div class="h-20 rounded-xl bg-gray-100"></div>
+                            <div class="h-20 rounded-xl bg-gray-500"></div>
+                            <div class="h-20 rounded-xl bg-gray-900"></div>
+                            <p class="text-sm font-medium text-center mt-2">Grayscale</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buttons -->
+            <section id="buttons" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-cursor-click-02 text-primary"></i> Buttons
+                </h2>
+                <div class="preview-card space-y-6">
+                    <div>
+                        <div class="flex flex-wrap gap-4 items-center mb-4">
+                            <button
+                                class="px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+                                Primary Button
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-sm font-medium hover:from-indigo-700 hover:to-purple-700 shadow-lg shadow-indigo-500/20 transition-all">
+                                Gradient Button
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all">
+                                Secondary Button
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-red-50 text-red-600 rounded-xl text-sm font-medium hover:bg-red-100 transition-all">
+                                Danger Button
+                            </button>
+                            <button
+                                class="px-6 py-2.5 text-gray-500 hover:text-gray-900 text-sm font-medium transition-all">
+                                Ghost Button
+                            </button>
+                        </div>
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Primary Button --&gt;
+&lt;button class="px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all"&gt;
+    Primary Button
+&lt;/button&gt;
+
+&lt;!-- Gradient Button --&gt;
+&lt;button class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl text-sm font-medium hover:from-indigo-700 hover:to-purple-700 shadow-lg shadow-indigo-500/20 transition-all"&gt;
+    Gradient Button
+&lt;/button&gt;
+
+&lt;!-- Secondary Button --&gt;
+&lt;button class="px-6 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all"&gt;
+    Secondary Button
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-4 items-center mb-4">
+                            <button
+                                class="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+                                <i class="hgi-stroke hgi-plus"></i> With Icon
+                            </button>
+                            <button
+                                class="p-3 bg-white border border-gray-200 text-gray-500 rounded-xl hover:bg-gray-50 hover:text-primary transition-all">
+                                <i class="hgi-stroke hgi-settings-02 text-xl"></i>
+                            </button>
+                            <button
+                                class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                <i class="hgi-stroke hgi-plus text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Button with Icon --&gt;
+&lt;button class="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all"&gt;
+    &lt;i class="hgi-stroke hgi-plus"&gt;&lt;/i&gt; With Icon
+&lt;/button&gt;
+
+&lt;!-- Icon Only Button --&gt;
+&lt;button class="p-3 bg-white border border-gray-200 text-gray-500 rounded-xl hover:bg-gray-50 hover:text-primary transition-all"&gt;
+    &lt;i class="hgi-stroke hgi-settings-02 text-xl"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- Circular FAB --&gt;
+&lt;button class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/20 hover:scale-105 transition-transform"&gt;
+    &lt;i class="hgi-stroke hgi-plus text-xl"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inputs & Forms -->
+            <section id="inputs" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-form-01 text-primary"></i> Inputs & Forms
+                </h2>
+                <div class="preview-card max-w-2xl space-y-6">
+                    <!-- Text Input -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+                        <input type="email" placeholder="john@example.com"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none">
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Text Input --&gt;
+&lt;div&gt;
+    &lt;label class="block text-sm font-medium text-gray-700 mb-1.5"&gt;Email Address&lt;/label&gt;
+    &lt;input type="email" placeholder="john@example.com" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Search</label>
+                        <div class="relative">
+                            <i
+                                class="hgi-stroke hgi-search-01 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                            <input type="text" placeholder="Search dreams..."
+                                class="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none">
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Search Input --&gt;
+&lt;div class="relative"&gt;
+    &lt;i class="hgi-stroke hgi-search-01 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"&gt;&lt;/i&gt;
+    &lt;input type="text" placeholder="Search..." class="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Select -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Category</label>
+                        <div class="relative">
+                            <select
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none appearance-none">
+                                <option>Spiritual</option>
+                                <option>Personal</option>
+                                <option>Family</option>
+                            </select>
+                            <i
+                                class="hgi-stroke hgi-arrow-down-01 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Select Dropdown --&gt;
+&lt;div class="relative"&gt;
+    &lt;select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none appearance-none"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;i class="hgi-stroke hgi-arrow-down-01 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Description</label>
+                        <textarea rows="4" placeholder="Write your thoughts..."
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none resize-none"></textarea>
+
+                        <!-- Code Block -->
+                        <div
+                            class="relative group mt-6 rounded-xl overflow-hidden border border-gray-800 bg-gray-900 shadow-2xl">
+                            <div class="copy-btn-wrapper">
+                                <button onclick="copyCode(this)"
+                                    class="px-3 py-1.5 bg-gray-800/50 backdrop-blur border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg text-xs font-medium transition-all flex items-center gap-2">
+                                    <i class="hgi-stroke hgi-copy-01"></i> Copy
+                                </button>
+                            </div>
+                            <pre
+                                class="code-snippet"><code>&lt;!-- Textarea --&gt;
+&lt;textarea rows="4" placeholder="Write..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none resize-none"&gt;&lt;/textarea&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Switch -->
+                    <div>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <div>
+                                <p class="font-medium text-gray-900 text-sm">Notifications</p>
+                                <p class="text-xs text-gray-500">Receive daily reminders</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" checked>
+                                <div
+                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Toggle Switch --&gt;
+&lt;label class="relative inline-flex items-center cursor-pointer"&gt;
+    &lt;input type="checkbox" class="sr-only peer" checked&gt;
+    &lt;div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"&gt;&lt;/div&gt;
+&lt;/label&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards -->
+            <section id="cards" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-layout-01 text-primary"></i> Cards
+                </h2>
+                <div class="preview-card bg-gray-50 p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- Stats Card -->
+                        <div>
+                            <div
+                                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-50 to-white p-6 border border-indigo-100 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all group">
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none group-hover:opacity-15 transition-opacity">
+                                    <i class="hgi-stroke hgi-moon-02 text-9xl text-indigo-500"></i>
+                                </div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                            <i class="hgi-stroke hgi-moon-02 text-2xl"></i>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-green-600">
+                                            <i class="hgi hgi-stroke hgi-arrow-up-01 text-sm"></i>
+                                            <span class="text-sm font-bold">12%</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-5xl font-black text-gray-900 mb-2">24</h3>
+                                    <p class="text-sm font-semibold text-gray-700">Dreams</p>
+                                    <p class="text-xs text-gray-500 mt-1">Recorded this month</p>
+                                </div>
+                            </div>
+
+                            <!-- Code Block -->
+                            <div class="code-wrapper">
+                                <div class="code-header">
+                                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                    <button onclick="copyCode(this)"
+                                        class="text-gray-400 hover:text-white transition-colors">
+                                        <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                    </button>
+                                </div>
+                                <pre><code class="language-html">&lt;!-- Stats Card --&gt;
+&lt;div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-50 to-white p-6 border border-indigo-100 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all group"&gt;
+    &lt;div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none group-hover:opacity-15 transition-opacity"&gt;
+        &lt;i class="hgi-stroke hgi-moon-02 text-9xl text-indigo-500"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="relative z-10"&gt;
+        &lt;div class="flex items-center justify-between mb-4"&gt;
+            &lt;div class="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600"&gt;
+                &lt;i class="hgi-stroke hgi-moon-02 text-2xl"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div class="flex items-center gap-1 text-green-600"&gt;
+                &lt;i class="hgi hgi-stroke hgi-arrow-up-01 text-sm"&gt;&lt;/i&gt;
+                &lt;span class="text-sm font-bold"&gt;12%&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h3 class="text-5xl font-black text-gray-900 mb-2"&gt;24&lt;/h3&gt;
+        &lt;p class="text-sm font-semibold text-gray-700"&gt;Dreams&lt;/p&gt;
+        &lt;p class="text-xs text-gray-500 mt-1"&gt;Recorded this month&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Content Card -->
+                        <div>
+                            <div
+                                class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer group">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform">
+                                            <i class="hgi-stroke hgi-moon-02 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3
+                                                class="font-bold text-gray-900 text-sm group-hover:text-primary transition-colors">
+                                                Flying over mountains</h3>
+                                            <p class="text-xs text-gray-500">Today, 8:30 AM</p>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 text-[10px] font-bold uppercase tracking-wide">Lucid</span>
+                                </div>
+                                <p class="text-sm text-gray-600 line-clamp-2 mb-4 leading-relaxed">
+                                    I was soaring above snow-capped peaks, feeling the cold wind on my face. The colors
+                                    were
+                                    incredibly vivid...
+                                </p>
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-1 bg-gray-50 text-gray-500 text-xs rounded-lg">#flying</span>
+                                    <span class="px-2 py-1 bg-gray-50 text-gray-500 text-xs rounded-lg">#nature</span>
+                                </div>
+                            </div>
+
+                            <!-- Code Block -->
+                            <div class="code-wrapper">
+                                <div class="code-header">
+                                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                    <button onclick="copyCode(this)"
+                                        class="text-gray-400 hover:text-white transition-colors">
+                                        <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                    </button>
+                                </div>
+                                <pre><code class="language-html">&lt;!-- Content Card --&gt;
+&lt;div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer group"&gt;
+    &lt;div class="flex justify-between items-start mb-3"&gt;
+        &lt;div class="flex items-center gap-3"&gt;
+            &lt;div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform"&gt;
+                &lt;i class="hgi-stroke hgi-moon-02 text-xl"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-gray-900 text-sm group-hover:text-primary transition-colors"&gt;Title&lt;/h3&gt;
+                &lt;p class="text-xs text-gray-500"&gt;Subtitle&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 text-[10px] font-bold uppercase tracking-wide"&gt;Tag&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class="text-sm text-gray-600 line-clamp-2 mb-4 leading-relaxed"&gt;Content description...&lt;/p&gt;
+    &lt;div class="flex items-center gap-2"&gt;
+        &lt;span class="px-2 py-1 bg-gray-50 text-gray-500 text-xs rounded-lg"&gt;#tag&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section id="navigation" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-menu-01 text-primary"></i> Navigation
+                </h2>
+                <div class="preview-card space-y-8">
+
+                    <!-- Tab Navigation -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Tabs</p>
+                        <div class="flex gap-2 p-1 bg-gray-100 rounded-xl w-fit">
+                            <button
+                                class="px-4 py-2 bg-white text-gray-900 shadow-sm rounded-lg text-sm font-medium transition-all">
+                                Active Tab
+                            </button>
+                            <button
+                                class="px-4 py-2 text-gray-500 hover:text-gray-900 rounded-lg text-sm font-medium transition-all">
+                                Inactive Tab
+                            </button>
+                            <button
+                                class="px-4 py-2 text-gray-500 hover:text-gray-900 rounded-lg text-sm font-medium transition-all">
+                                Another Tab
+                            </button>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Tabs --&gt;
+&lt;div class="flex gap-2 p-1 bg-gray-100 rounded-xl w-fit"&gt;
+    &lt;button class="px-4 py-2 bg-white text-gray-900 shadow-sm rounded-lg text-sm font-medium transition-all"&gt;Active&lt;/button&gt;
+    &lt;button class="px-4 py-2 text-gray-500 hover:text-gray-900 rounded-lg text-sm font-medium transition-all"&gt;Inactive&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Link -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Sidebar Links</p>
+                        <div class="w-64 space-y-1">
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl text-sm font-medium transition-colors">
+                                <i class="hgi-stroke hgi-dashboard-square-01 text-xl"></i>
+                                Active State
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl text-sm font-medium transition-colors">
+                                <i class="hgi-stroke hgi-moon text-xl"></i>
+                                Inactive State
+                            </a>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Sidebar Link Active --&gt;
+&lt;a href="#" class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl text-sm font-medium transition-colors"&gt;
+    &lt;i class="hgi-stroke hgi-icon-name text-xl"&gt;&lt;/i&gt;
+    Active State
+&lt;/a&gt;
+
+&lt;!-- Sidebar Link Inactive --&gt;
+&lt;a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl text-sm font-medium transition-colors"&gt;
+    &lt;i class="hgi-stroke hgi-icon-name text-xl"&gt;&lt;/i&gt;
+    Inactive State
+&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Feedback -->
+            <section id="feedback" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-notification-02 text-primary"></i> Feedback & Status
+                </h2>
+                <div class="preview-card space-y-8">
+
+                    <!-- Badges -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Badges</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-bold">Default</span>
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Primary</span>
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold">Success</span>
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-bold">Warning</span>
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold">Danger</span>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Badges --&gt;
+&lt;span class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-bold"&gt;Default&lt;/span&gt;
+&lt;span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold"&gt;Primary&lt;/span&gt;
+&lt;span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold"&gt;Success&lt;/span&gt;
+&lt;span class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-bold"&gt;Warning&lt;/span&gt;
+&lt;span class="px-2.5 py-1 rounded-full bg-red-50 text-red-600 text-xs font-bold"&gt;Danger&lt;/span&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Alerts -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Alerts</p>
+                        <div class="space-y-3 max-w-xl">
+                            <div
+                                class="flex items-start gap-3 p-4 bg-blue-50 text-blue-700 rounded-xl border border-blue-100">
+                                <i class="hgi-stroke hgi-information-circle text-xl mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-sm">Info Alert</p>
+                                    <p class="text-xs mt-1 opacity-90">This is an informational message for the user.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-3 p-4 bg-amber-50 text-amber-700 rounded-xl border border-amber-100">
+                                <i class="hgi-stroke hgi-alert-02 text-xl mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-sm">Warning Alert</p>
+                                    <p class="text-xs mt-1 opacity-90">Please be careful with this action.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Info Alert --&gt;
+&lt;div class="flex items-start gap-3 p-4 bg-blue-50 text-blue-700 rounded-xl border border-blue-100"&gt;
+    &lt;i class="hgi-stroke hgi-information-circle text-xl mt-0.5"&gt;&lt;/i&gt;
+    &lt;div&gt;
+        &lt;p class="font-bold text-sm"&gt;Info Alert&lt;/p&gt;
+        &lt;p class="text-xs mt-1 opacity-90"&gt;Message text here.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Warning Alert --&gt;
+&lt;div class="flex items-start gap-3 p-4 bg-amber-50 text-amber-700 rounded-xl border border-amber-100"&gt;
+    &lt;i class="hgi-stroke hgi-alert-02 text-xl mt-0.5"&gt;&lt;/i&gt;
+    &lt;div&gt;
+        &lt;p class="font-bold text-sm"&gt;Warning Alert&lt;/p&gt;
+        &lt;p class="text-xs mt-1 opacity-90"&gt;Message text here.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Toasts -->
+                <div class="mt-12">
+                    <p class="text-xs text-gray-400 uppercase font-bold mb-4">Toast Notifications</p>
+                    <div class="space-y-4">
+                        <!-- Success Toast -->
+                        <div
+                            class="flex items-center gap-3 p-4 bg-gray-900 text-white rounded-xl shadow-xl max-w-sm border border-gray-800">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                                <i class="hgi-stroke hgi-tick-02"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Success</p>
+                                <p class="text-xs text-gray-400">Changes saved successfully.</p>
+                            </div>
+                            <button class="ml-auto text-gray-500 hover:text-white transition-colors">
+                                <i class="hgi-stroke hgi-cancel-01"></i>
+                            </button>
+                        </div>
+
+                        <!-- Error Toast -->
+                        <div
+                            class="flex items-center gap-3 p-4 bg-white text-gray-900 rounded-xl shadow-xl max-w-sm border border-gray-100">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500">
+                                <i class="hgi-stroke hgi-alert-circle"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm">Error</p>
+                                <p class="text-xs text-gray-500">Something went wrong.</p>
+                            </div>
+                            <button class="ml-auto text-gray-400 hover:text-gray-900 transition-colors">
+                                <i class="hgi-stroke hgi-cancel-01"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Code Block -->
+                    <div class="code-wrapper">
+                        <div class="code-header">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                            <button onclick="copyCode(this)" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                            </button>
+                        </div>
+                        <pre><code class="language-html">&lt;!-- Success Toast (Dark) --&gt;
+&lt;div class="fixed bottom-6 right-6 flex items-center gap-3 p-4 bg-gray-900 text-white rounded-xl shadow-xl max-w-sm border border-gray-800 animate-slide-up z-50"&gt;
+    &lt;div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500"&gt;
+        &lt;i class="hgi-stroke hgi-tick-02"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;p class="font-bold text-sm"&gt;Success&lt;/p&gt;
+        &lt;p class="text-xs text-gray-400"&gt;Message goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="ml-auto text-gray-500 hover:text-white transition-colors"&gt;
+        &lt;i class="hgi-stroke hgi-cancel-01"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components -->
+            <section id="components" class="component-section">
+                <h2 class="component-title">
+                    <i class="hgi-stroke hgi-layers-01 text-primary"></i> Components
+                </h2>
+                <div class="preview-card space-y-12">
+
+                    <!-- Audio Player -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Audio Player</p>
+                        <div class="bg-gray-50 rounded-2xl p-4 flex items-center gap-4 max-w-md">
+                            <button
+                                class="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+                                <i class="hgi-stroke hgi-play text-xl ml-0.5"></i>
+                            </button>
+                            <div class="flex-1">
+                                <div class="h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary w-1/3 rounded-full"></div>
+                                </div>
+                                <div class="flex justify-between mt-1.5">
+                                    <span class="text-[10px] font-medium text-gray-500">0:45</span>
+                                    <span class="text-[10px] font-medium text-gray-500">2:30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Audio Player --&gt;
+&lt;div class="bg-gray-50 rounded-2xl p-4 flex items-center gap-4 max-w-md"&gt;
+    &lt;button class="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-700 hover:text-primary transition-colors"&gt;
+        &lt;i class="hgi-stroke hgi-play text-xl ml-0.5"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;div class="flex-1"&gt;
+        &lt;div class="h-1.5 bg-gray-200 rounded-full overflow-hidden"&gt;
+            &lt;div class="h-full bg-primary w-1/3 rounded-full"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="flex justify-between mt-1.5"&gt;
+            &lt;span class="text-[10px] font-medium text-gray-500"&gt;0:45&lt;/span&gt;
+            &lt;span class="text-[10px] font-medium text-gray-500"&gt;2:30&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Accordion -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Accordion Item</p>
+                        <div class="max-w-xl border border-gray-200 rounded-xl overflow-hidden">
+                            <button
+                                class="w-full flex items-center justify-between p-4 bg-white hover:bg-gray-50 transition-colors text-left">
+                                <span class="font-medium text-gray-900 text-sm">How do I export my data?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400"></i>
+                            </button>
+                            <div class="p-4 bg-gray-50 border-t border-gray-200 text-sm text-gray-600">
+                                You can export your data from the settings page. Look for the "Data & Privacy" section.
+                            </div>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Accordion Item --&gt;
+&lt;div class="max-w-xl border border-gray-200 rounded-xl overflow-hidden"&gt;
+    &lt;button class="w-full flex items-center justify-between p-4 bg-white hover:bg-gray-50 transition-colors text-left"&gt;
+        &lt;span class="font-medium text-gray-900 text-sm"&gt;Question Title&lt;/span&gt;
+        &lt;i class="hgi-stroke hgi-arrow-down-01 text-gray-400"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;div class="p-4 bg-gray-50 border-t border-gray-200 text-sm text-gray-600"&gt;
+        Answer content goes here.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div>
+                        <p class="text-xs text-gray-400 uppercase font-bold mb-4">Modal Structure</p>
+                        <div
+                            class="max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mx-auto">
+                            <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+                                <h3 class="text-lg font-bold text-gray-900">Modal Title</h3>
+                                <button class="text-gray-400 hover:text-gray-900">
+                                    <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-gray-600">This is the modal content area. You can place forms,
+                                    text, or other components here.</p>
+                            </div>
+                            <div class="p-6 border-t border-gray-100 flex justify-end gap-3 bg-gray-50">
+                                <button
+                                    class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors">Cancel</button>
+                                <button
+                                    class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">Confirm</button>
+                            </div>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="code-wrapper">
+                            <div class="code-header">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">HTML</span>
+                                <button onclick="copyCode(this)"
+                                    class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="hgi-stroke hgi-copy-01 text-lg"></i>
+                                </button>
+                            </div>
+                            <pre><code class="language-html">&lt;!-- Modal Structure --&gt;
+&lt;div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-sm"&gt;
+    &lt;div class="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden"&gt;
+        &lt;div class="p-6 border-b border-gray-100 flex items-center justify-between"&gt;
+            &lt;h3 class="text-lg font-bold text-gray-900"&gt;Modal Title&lt;/h3&gt;
+            &lt;button class="text-gray-400 hover:text-gray-900"&gt;
+                &lt;i class="hgi-stroke hgi-cancel-01 text-xl"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="p-6"&gt;
+            &lt;p class="text-sm text-gray-600"&gt;Modal content...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="p-6 border-t border-gray-100 flex justify-end gap-3 bg-gray-50"&gt;
+            &lt;button class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg text-sm font-medium transition-colors"&gt;Cancel&lt;/button&gt;
+            &lt;button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"&gt;Confirm&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        function showToast(message, type = 'success') {
+            // Create toast container if it doesn't exist
+            let toastContainer = document.getElementById('toast-container');
+            if (!toastContainer) {
+                toastContainer = document.createElement('div');
+                toastContainer.id = 'toast-container';
+                toastContainer.className = 'fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none';
+                document.body.appendChild(toastContainer);
+            }
+
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 p-4 rounded-xl shadow-xl max-w-sm border animate-slide-up pointer-events-auto transition-all duration-300 transform translate-y-0 opacity-100 ${type === 'success'
+                ? 'bg-gray-900 text-white border-gray-800'
+                : 'bg-white text-gray-900 border-gray-100'
+                }`;
+
+            const icon = type === 'success'
+                ? '<div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500"><i class="hgi-stroke hgi-tick-02"></i></div>'
+                : '<div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500"><i class="hgi-stroke hgi-alert-circle"></i></div>';
+
+            toast.innerHTML = `
+                ${icon}
+                <div>
+                    <p class="font-bold text-sm">${type === 'success' ? 'Success' : 'Error'}</p>
+                    <p class="text-xs ${type === 'success' ? 'text-gray-400' : 'text-gray-500'}">${message}</p>
+                </div>
+            `;
+
+            // Add to container
+            toastContainer.appendChild(toast);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function copyCode(button) {
+            const wrapper = button.closest('.code-wrapper');
+            const code = wrapper.querySelector('code').innerText;
+
+            navigator.clipboard.writeText(code).then(() => {
+                // Show toast notification
+                showToast('Code copied to clipboard!');
+
+                // Button feedback
+                const originalContent = button.innerHTML;
+                button.innerHTML = '<i class="hgi-stroke hgi-tick-02"></i> Copied!';
+                button.classList.add('text-green-400', 'bg-gray-800', 'border-green-500/50');
+                button.classList.remove('text-gray-400', 'border-gray-700', 'hover:bg-gray-700', 'hover:text-white');
+
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.classList.remove('text-green-400', 'bg-gray-800', 'border-green-500/50');
+                    button.classList.add('text-gray-400', 'border-gray-700', 'hover:bg-gray-700', 'hover:text-white');
+                }, 2000);
+            }).catch(err => {
+                showToast('Failed to copy code', 'error');
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>

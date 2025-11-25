@@ -27,41 +27,32 @@
         <!-- Top Navigation (Desktop) -->
         <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
             <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <!-- Logo & Nav Links -->
                 <div class="flex items-center gap-8">
                     <div class="flex items-center gap-2">
                         <div
                             class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
                             <i class="hgi-stroke hgi-moon-02 text-lg"></i>
                         </div>
-                        <span class="text-lg font-bold text-gray-900 tracking-tight">Seer</span>
+                        <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
                     </div>
-
                     <nav class="flex items-center gap-1">
                         <a href="index.html"
-                            class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard
-                        </a>
+                            class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard</a>
                         <a href="dreams.html"
-                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="hgi-stroke hgi-moon-stars"></i> Dreams
-                        </a>
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-moon"></i> Dreams</a>
                         <a href="prayers.html"
-                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="hgi-stroke hgi-prayer-hands-02"></i> Prayers
-                        </a>
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-hand-prayer"></i> Prayers</a>
                         <a href="emotions.html"
-                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="hgi-stroke hgi-smile"></i> Emotions
-                        </a>
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-favourite"></i> Emotions</a>
                         <a href="praise-wall.html"
-                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
-                            <i class="hgi-stroke hgi-star"></i> Praise Wall
-                        </a>
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-star"></i> Praise Wall</a>
                     </nav>
                 </div>
-
-                <!-- Right Actions -->
                 <div class="flex items-center gap-4">
                     <div class="relative">
                         <i class="hgi-stroke hgi-search-01 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
@@ -70,16 +61,90 @@
                     </div>
                     <div class="h-6 w-px bg-gray-200"></div>
                     <button id="notificationBtnDesktop"
-                        class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative">
-                        <i class="hgi-stroke hgi-notification-02 text-xl"></i>
-                        <span
-                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
-                    </button>
-                    <a href="profile.html"
-                        class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors">
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
-                            class="w-8 h-8 rounded-full">
-                    </a>
+                        class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative"><i
+                            class="hgi-stroke hgi-notification-02 text-xl"></i><span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span></button>
+                    <div class="relative">
+                        <button id="profileBtn"
+                            class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors focus:outline-none">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                                class="w-8 h-8 rounded-full">
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div id="profileDropdown"
+                            class="hidden absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 transform origin-top-right transition-all duration-200">
+                            <div class="p-4 border-b border-gray-50">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&amp;background=4F46E5&amp;color=fff"
+                                        alt="User" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-sm">John Doe</h4>
+                                        <p class="text-xs text-gray-500">john.doe@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upgrade to Pro Banner -->
+                            <a href="upgrade.html"
+                                class="block p-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                                        <i class="hgi-stroke hgi-lightning-01 text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-sm">Upgrade to Pro</h4>
+                                        <p class="text-xs text-white/80">Unlock all features</p>
+                                    </div>
+                                    <i class="hgi-stroke hgi-arrow-right-01 text-white/60"></i>
+                                </div>
+                            </a>
+
+                            <div class="p-2">
+                                <a href="profile.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-user text-lg text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-pencil-edit-02 text-lg text-gray-400"></i>
+                                    Edit Profile
+                                </a>
+                                <a href="settings.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-settings-02 text-lg text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a href="help.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-help-circle text-lg text-gray-400"></i>
+                                    Help Center
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <div class="flex items-center justify-between px-3 py-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <i class="hgi-stroke hgi-moon-02 text-lg text-gray-400"></i>
+                                        <span class="text-sm text-gray-700">Dark Mode</span>
+                                    </div>
+                                    <button
+                                        class="w-10 h-6 bg-gray-200 rounded-full relative transition-colors focus:outline-none">
+                                        <div
+                                            class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm transition-transform">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="landing.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-logout-02 text-lg"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -207,14 +272,12 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- Dreams Card -->
                             <div
-                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                                <!-- Decorative SVG Background -->
-                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
-                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#6366f1"
-                                        d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,40.1,76.4C26.4,83.8,10,86,-6.5,85.6C-23,85.2,-46,82.2,-61.8,73.2C-77.6,64.2,-86.2,49.2,-89.8,33.1C-93.4,17,-92,0,-86.8,-14.8C-81.6,-29.6,-72.6,-42.2,-61.2,-51.4C-49.8,-60.6,-36,-66.4,-22.1,-73.8C-8.2,-81.2,5.8,-90.2,20.9,-91.8C36,-93.4,30.6,-83.6,44.7,-76.4Z"
-                                        transform="translate(100 100)" />
-                                </svg>
+                                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-50 to-white p-6 border border-indigo-100 shadow-sm hover:shadow-lg hover:border-indigo-200 transition-all group">
+                                <!-- Decorative Icon Background -->
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none group-hover:opacity-15 transition-opacity">
+                                    <i class="hgi-stroke hgi-moon-02 text-9xl text-indigo-500"></i>
+                                </div>
 
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-4">
@@ -235,14 +298,12 @@
 
                             <!-- Prayers Card -->
                             <div
-                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                                <!-- Decorative SVG Background -->
-                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
-                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#f59e0b"
-                                        d="M41.3,-72.5C54.4,-66.3,66.6,-56.9,74.7,-44.8C82.8,-32.7,86.8,-18,87.3,-3.6C87.8,10.8,84.8,24.9,78.1,37.8C71.4,50.7,61,62.4,48.3,69.8C35.6,77.2,20.6,80.3,5.8,80.1C-9,79.9,-23.8,76.4,-37.4,70.1C-51,63.8,-63.4,54.7,-71.6,42.8C-79.8,30.9,-83.8,16.2,-83.9,1.4C-84,-13.4,-80.2,-28.3,-72.5,-41.2C-64.8,-54.1,-53.2,-65,-40.1,-71.6C-27,-78.2,-12.5,-80.5,1.3,-82.7C15.1,-84.9,28.2,-78.7,41.3,-72.5Z"
-                                        transform="translate(100 100)" />
-                                </svg>
+                                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 to-white p-6 border border-amber-100 shadow-sm hover:shadow-lg hover:border-amber-200 transition-all group">
+                                <!-- Decorative Icon Background -->
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none group-hover:opacity-15 transition-opacity">
+                                    <i class="hgi-stroke hgi-hand-prayer text-9xl text-amber-500"></i>
+                                </div>
 
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-4">
@@ -263,14 +324,12 @@
 
                             <!-- Answered Card -->
                             <div
-                                class="relative overflow-hidden rounded-3xl bg-white p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                                <!-- Decorative SVG Background -->
-                                <svg class="absolute top-0 right-0 w-40 h-40 -mr-10 -mt-10 opacity-10"
-                                    viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#10b981"
-                                        d="M39.5,-67.3C51.4,-60.1,61.3,-50.2,68.4,-38.5C75.5,-26.8,79.8,-13.4,80.9,0.5C82,14.4,79.9,28.8,74.1,41.9C68.3,55,58.8,66.8,46.8,73.9C34.8,81,20.3,83.4,6.1,83.1C-8.1,82.8,-22,79.8,-34.6,73.4C-47.2,67,-58.5,57.2,-66.8,45.1C-75.1,33,-80.4,18.6,-81.3,3.8C-82.2,-11,-78.7,-26.2,-71.4,-39.4C-64.1,-52.6,-53,-63.8,-40.1,-70.6C-27.2,-77.4,-13.6,-79.8,0.3,-80.3C14.2,-80.8,27.6,-74.5,39.5,-67.3Z"
-                                        transform="translate(100 100)" />
-                                </svg>
+                                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 to-white p-6 border border-emerald-100 shadow-sm hover:shadow-lg hover:border-emerald-200 transition-all group">
+                                <!-- Decorative Icon Background -->
+                                <div
+                                    class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none group-hover:opacity-15 transition-opacity">
+                                    <i class="hgi-stroke hgi-star text-9xl text-emerald-500"></i>
+                                </div>
 
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-4">
@@ -729,103 +788,9 @@
 
 </body>
 
-<script>
-    const quotes = [
-        {
-            text: "For God speaks again and again, though people do not recognize it. He speaks in dreams, in visions of the night, when deep sleep falls on people as they lie in their beds.",
-            author: "Job 33:14-15",
-            version: "NLT"
-        },
-        {
-            text: "And it shall come to pass afterward, that I will pour out my Spirit on all flesh; your sons and your daughters shall prophesy, your old men shall dream dreams, and your young men shall see visions.",
-            author: "Joel 2:28",
-            version: "ESV"
-        },
-        {
-            text: "Call to me and I will answer you, and will tell you great and hidden things that you have not known.",
-            author: "Jeremiah 33:3",
-            version: "ESV"
-        },
-        {
-            text: "The future belongs to those who believe in the beauty of their dreams.",
-            author: "Eleanor Roosevelt",
-            version: "Quote"
-        },
-        {
-            text: "Prayer does not fit us for the greater work; prayer is the greater work.",
-            author: "Oswald Chambers",
-            version: "Quote"
-        },
-        {
-            text: "In a dream, in a vision of the night, when deep sleep falls on men as they slumber in their beds, he may speak in their ears and terrify them with warnings.",
-            author: "Job 33:15-16",
-            version: "NIV"
-        }
-    ];
-
-    function refreshQuote() {
-        const quoteText = document.getElementById('quote-text');
-        const quoteMeta = document.getElementById('quote-meta');
-        const quoteAuthor = document.getElementById('quote-author');
-        const quoteVersion = document.getElementById('quote-version');
-
-        // Get a random quote different from current if possible
-        let randomQuote;
-        do {
-            randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        } while (quoteText.textContent.includes(randomQuote.text) && quotes.length > 1);
-
-        // Simple fade effect
-        quoteText.style.opacity = '0';
-        quoteMeta.style.opacity = '0';
-
-        setTimeout(() => {
-            quoteText.textContent = `"${randomQuote.text}"`;
-            quoteAuthor.textContent = randomQuote.author;
-            quoteVersion.textContent = randomQuote.version;
-
-            quoteText.style.opacity = '1';
-            quoteMeta.style.opacity = '1';
-        }, 300);
-    }
-
-    // Quick mood logging
-    function quickLogMood(name, emoji) {
-        const moodLog = {
-            name,
-            emoji,
-            date: new Date().toISOString(),
-            timestamp: Date.now()
-        };
-        let moodLogs = JSON.parse(localStorage.getItem('moodLogs') || '[]');
-        moodLogs.unshift(moodLog);
-        localStorage.setItem('moodLogs', JSON.stringify(moodLogs.slice(0, 30)));
-        alert(`Mood logged: ${emoji} ${name}`);
-    }
-
-    // Filter functionality
-    function toggleFilter() {
-        const dropdown = document.getElementById('filterDropdown');
-        dropdown.classList.toggle('hidden');
-    }
-
-    function applyFilter(period) {
-        console.log('Filter applied:', period);
-        // Here you would filter the data based on the period
-        toggleFilter();
-        alert(`Filter applied: ${period}`);
-    }
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function (event) {
-        const filterButton = document.getElementById('filterButton');
-        const filterDropdown = document.getElementById('filterDropdown');
-        if (filterButton && filterDropdown && !filterButton.contains(event.target) && !filterDropdown.contains(event.target)) {
-            filterDropdown.classList.add('hidden');
-        }
-    });
-</script>
-</body>
+<script src="js/quotes.js"></script>
+<script src="js/mood-logger.js"></script>
+<script src="js/filters.js"></script>
 
 <!-- Mobile Menu Drawer Overlay -->
 <div id="mobileMenuOverlay"
@@ -897,7 +862,7 @@
                 <i class="hgi-stroke hgi-settings-02 text-xl"></i>
                 <span class="font-medium">Settings</span>
             </a>
-            <a href="#"
+            <a href="help.html"
                 class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
                 <i class="hgi-stroke hgi-help-circle text-xl"></i>
                 <span class="font-medium">Help Center</span>
@@ -1126,35 +1091,95 @@
 
         <!-- Weekly Progress -->
         <div>
-            <h3 class="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">This Week</h3>
-            <div class="flex items-end justify-between gap-2 h-32 bg-white border border-gray-100 rounded-2xl p-4">
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-gray-100 rounded-t-lg" style="height: 40%"></div>
-                    <span class="text-xs text-gray-500 font-medium">M</span>
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">This Week</h3>
+                <span class="text-xs text-gray-500 font-medium">7 days streak 🔥</span>
+            </div>
+            <div
+                class="flex items-end justify-between gap-2 h-40 bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-4 shadow-sm">
+                <!-- Monday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-indigo-400 to-indigo-300 rounded-t-lg transition-all group-hover:from-indigo-500 group-hover:to-indigo-400 group-hover:shadow-lg"
+                        style="height: 40%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            2 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-gray-500 font-medium group-hover:text-indigo-600 transition-colors">M</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-gray-100 rounded-t-lg" style="height: 60%"></div>
-                    <span class="text-xs text-gray-500 font-medium">T</span>
+                <!-- Tuesday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-indigo-400 to-indigo-300 rounded-t-lg transition-all group-hover:from-indigo-500 group-hover:to-indigo-400 group-hover:shadow-lg"
+                        style="height: 60%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            3 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-gray-500 font-medium group-hover:text-indigo-600 transition-colors">T</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-gray-100 rounded-t-lg" style="height: 80%"></div>
-                    <span class="text-xs text-gray-500 font-medium">W</span>
+                <!-- Wednesday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-indigo-500 to-indigo-400 rounded-t-lg transition-all group-hover:from-indigo-600 group-hover:to-indigo-500 group-hover:shadow-lg"
+                        style="height: 80%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            4 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-gray-500 font-medium group-hover:text-indigo-600 transition-colors">W</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-gray-100 rounded-t-lg" style="height: 50%"></div>
-                    <span class="text-xs text-gray-500 font-medium">T</span>
+                <!-- Thursday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-indigo-400 to-indigo-300 rounded-t-lg transition-all group-hover:from-indigo-500 group-hover:to-indigo-400 group-hover:shadow-lg"
+                        style="height: 50%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            2 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-gray-500 font-medium group-hover:text-indigo-600 transition-colors">T</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-gray-100 rounded-t-lg" style="height: 70%"></div>
-                    <span class="text-xs text-gray-500 font-medium">F</span>
+                <!-- Friday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-indigo-500 to-indigo-400 rounded-t-lg transition-all group-hover:from-indigo-600 group-hover:to-indigo-500 group-hover:shadow-lg"
+                        style="height: 70%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            3 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-gray-500 font-medium group-hover:text-indigo-600 transition-colors">F</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-orange-500 rounded-t-lg" style="height: 90%"></div>
-                    <span class="text-xs text-orange-500 font-bold">S</span>
+                <!-- Saturday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-orange-500 to-orange-400 rounded-t-lg transition-all group-hover:from-orange-600 group-hover:to-orange-500 group-hover:shadow-lg shadow-orange-500/20"
+                        style="height: 90%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            5 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-orange-500 font-bold group-hover:text-orange-600 transition-colors">S</span>
                 </div>
-                <div class="flex-1 flex flex-col items-center gap-1">
-                    <div class="w-full bg-orange-500 rounded-t-lg" style="height: 100%"></div>
-                    <span class="text-xs text-orange-500 font-bold">S</span>
+                <!-- Sunday -->
+                <div class="flex-1 flex flex-col items-center gap-1 group cursor-pointer">
+                    <div class="relative w-full bg-gradient-to-t from-orange-600 to-orange-500 rounded-t-lg transition-all group-hover:from-orange-700 group-hover:to-orange-600 group-hover:shadow-lg shadow-orange-500/20"
+                        style="height: 100%">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            6 entries
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs text-orange-500 font-bold group-hover:text-orange-600 transition-colors">S</span>
                 </div>
             </div>
         </div>
@@ -1162,104 +1187,7 @@
     </div>
 </div>
 
-<script>
-    // Mobile Menu Logic
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
-    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-
-    function toggleMobileMenu() {
-        const isHidden = mobileMenuDrawer.classList.contains('-translate-x-full');
-        if (isHidden) {
-            mobileMenuDrawer.classList.remove('-translate-x-full');
-            mobileMenuOverlay.classList.remove('hidden');
-            setTimeout(() => mobileMenuOverlay.classList.remove('opacity-0'), 10);
-        } else {
-            mobileMenuDrawer.classList.add('-translate-x-full');
-            mobileMenuOverlay.classList.add('opacity-0');
-            setTimeout(() => mobileMenuOverlay.classList.add('hidden'), 300);
-        }
-    }
-
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-
-    // Notification Drawer Logic
-    const notificationBtnDesktop = document.getElementById('notificationBtnDesktop');
-    const notificationBtnMobile = document.getElementById('notificationBtnMobile');
-    const closeNotificationBtn = document.getElementById('closeNotificationBtn');
-    const notificationDrawer = document.getElementById('notificationDrawer');
-    const notificationOverlay = document.getElementById('notificationOverlay');
-
-    function toggleNotificationDrawer() {
-        const isHidden = notificationDrawer.classList.contains('translate-x-full');
-        if (isHidden) {
-            notificationDrawer.classList.remove('translate-x-full');
-            notificationOverlay.classList.remove('hidden');
-            setTimeout(() => notificationOverlay.classList.remove('opacity-0'), 10);
-        } else {
-            notificationDrawer.classList.add('translate-x-full');
-            notificationOverlay.classList.add('opacity-0');
-            setTimeout(() => notificationOverlay.classList.add('hidden'), 300);
-        }
-    }
-
-    if (notificationBtnDesktop) notificationBtnDesktop.addEventListener('click', toggleNotificationDrawer);
-    if (notificationBtnMobile) notificationBtnMobile.addEventListener('click', toggleNotificationDrawer);
-    if (closeNotificationBtn) closeNotificationBtn.addEventListener('click', toggleNotificationDrawer);
-    if (notificationOverlay) notificationOverlay.addEventListener('click', toggleNotificationDrawer);
-
-    // Streak Drawer Logic
-    const streakBtn = document.getElementById('streakBtn');
-    const closeStreakBtn = document.getElementById('closeStreakBtn');
-    const streakDrawer = document.getElementById('streakDrawer');
-    const streakOverlay = document.getElementById('streakOverlay');
-
-    function toggleStreakDrawer() {
-        const isHidden = streakDrawer.classList.contains('translate-y-full');
-        if (isHidden) {
-            streakDrawer.classList.remove('translate-y-full');
-            streakOverlay.classList.remove('hidden');
-            setTimeout(() => streakOverlay.classList.remove('opacity-0'), 10);
-        } else {
-            streakDrawer.classList.add('translate-y-full');
-            streakOverlay.classList.add('opacity-0');
-            setTimeout(() => streakOverlay.classList.add('hidden'), 300);
-        }
-    }
-
-    if (streakBtn) streakBtn.addEventListener('click', toggleStreakDrawer);
-    if (closeStreakBtn) closeStreakBtn.addEventListener('click', toggleStreakDrawer);
-    if (streakOverlay) streakOverlay.addEventListener('click', toggleStreakDrawer);
-
-    // Create Menu Logic
-    const createBtn = document.getElementById('createBtn');
-    const createMenu = document.getElementById('createMenu');
-
-    if (createBtn && createMenu) {
-        createBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isHidden = createMenu.classList.contains('hidden');
-            if (isHidden) {
-                createMenu.classList.remove('hidden');
-                setTimeout(() => createMenu.classList.remove('opacity-0'), 10);
-            } else {
-                createMenu.classList.add('opacity-0');
-                setTimeout(() => createMenu.classList.add('hidden'), 200);
-            }
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!createMenu.contains(e.target) && !createBtn.contains(e.target)) {
-                createMenu.classList.add('opacity-0');
-                setTimeout(() => createMenu.classList.add('hidden'), 200);
-            }
-        });
-    }
-</script>
+<script src="js/navigation.js"></script>
 </body>
 
 </html>

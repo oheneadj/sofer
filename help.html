@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Seer</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-gray-50/50">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Navigation (Desktop) -->
+        <header class="bg-white border-b border-gray-200 sticky top-0 z-50 hidden md:block">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                            <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                        </div>
+                        <span class="text-lg font-bold text-gray-900 tracking-tight">DreamLog</span>
+                    </div>
+                    <nav class="flex items-center gap-1">
+                        <a href="index.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-dashboard-square-01"></i> Dashboard</a>
+                        <a href="dreams.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-moon"></i> Dreams</a>
+                        <a href="prayers.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-hand-prayer"></i> Prayers</a>
+                        <a href="emotions.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-favourite"></i> Emotions</a>
+                        <a href="praise-wall.html"
+                            class="px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg text-sm font-medium flex items-center gap-2"><i
+                                class="hgi-stroke hgi-star"></i> Praise Wall</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <i class="hgi-stroke hgi-search-01 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" placeholder="Search..."
+                            class="pl-9 pr-4 py-1.5 bg-gray-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-48 transition-all">
+                    </div>
+                    <div class="h-6 w-px bg-gray-200"></div>
+                    <button id="notificationBtnDesktop"
+                        class="p-2 text-gray-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors relative"><i
+                            class="hgi-stroke hgi-notification-02 text-xl"></i><span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span></button>
+                    <div class="relative">
+                        <button id="profileBtn"
+                            class="flex items-center gap-2 hover:bg-gray-50 rounded-lg p-1 transition-colors focus:outline-none">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                                class="w-8 h-8 rounded-full">
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div id="profileDropdown"
+                            class="hidden absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 transform origin-top-right transition-all duration-200">
+                            <div class="p-4 border-b border-gray-50">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&amp;background=4F46E5&amp;color=fff"
+                                        alt="User" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-sm">John Doe</h4>
+                                        <p class="text-xs text-gray-500">john.doe@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upgrade to Pro Banner -->
+                            <a href="upgrade.html"
+                                class="block p-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                                        <i class="hgi-stroke hgi-lightning-01 text-yellow-300 text-lg"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-sm">Upgrade to Pro</h4>
+                                        <p class="text-xs text-white/80">Unlock all features</p>
+                                    </div>
+                                    <i class="hgi-stroke hgi-arrow-right-01 text-white/60"></i>
+                                </div>
+                            </a>
+
+                            <div class="p-2">
+                                <a href="profile.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-user text-lg text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-pencil-edit-02 text-lg text-gray-400"></i>
+                                    Edit Profile
+                                </a>
+                                <a href="settings.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-settings-02 text-lg text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a href="help.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-help-circle text-lg text-gray-400"></i>
+                                    Help Center
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <div class="flex items-center justify-between px-3 py-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <i class="hgi-stroke hgi-moon-02 text-lg text-gray-400"></i>
+                                        <span class="text-sm text-gray-700">Dark Mode</span>
+                                    </div>
+                                    <button
+                                        class="w-10 h-6 bg-gray-200 rounded-full relative transition-colors focus:outline-none">
+                                        <div
+                                            class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm transition-transform">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="landing.html"
+                                    class="flex items-center gap-3 px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                                    <i class="hgi-stroke hgi-logout-02 text-lg"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Header -->
+        <header
+            class="md:hidden h-16 flex items-center justify-between px-4 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+            <div class="flex items-center gap-2">
+                <button id="mobileMenuBtn" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                    <i class="hgi-stroke hgi-menu-01 text-2xl"></i>
+                </button>
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">Seer</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="notificationBtnMobile" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg relative">
+                    <i class="hgi-stroke hgi-notification-02 text-xl"></i>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                </button>
+                <button id="streakBtn" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg relative">
+                    <i class="hgi-stroke hgi-flash text-xl"></i>
+                    <span
+                        class="absolute -top-1 -right-1 px-1.5 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded-full">12</span>
+                </button>
+                <a href="profile.html">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="User"
+                        class="w-8 h-8 rounded-full">
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 pb-32 md:pb-8">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                        <i class="hgi-stroke hgi-help-circle text-primary text-3xl"></i>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Help Center</h1>
+                    <p class="text-gray-600 text-lg">Find answers and get support for Seer</p>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="mb-12">
+                    <div class="relative max-w-2xl mx-auto">
+                        <input type="text" placeholder="Search for help..."
+                            class="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-2xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none shadow-sm">
+                        <i
+                            class="hgi-stroke hgi-search-01 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                    <a href="#getting-started"
+                        class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all group">
+                        <div
+                            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                            <i class="hgi-stroke hgi-rocket text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Getting Started</h3>
+                        <p class="text-sm text-gray-600">Learn the basics of using Seer</p>
+                    </a>
+                    <a href="#features"
+                        class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all group">
+                        <div
+                            class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-100 transition-colors">
+                            <i class="hgi-stroke hgi-sparkles text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Features Guide</h3>
+                        <p class="text-sm text-gray-600">Explore all features in detail</p>
+                    </a>
+                    <a href="#contact"
+                        class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all group">
+                        <div
+                            class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
+                            <i class="hgi-stroke hgi-mail-01 text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Contact Support</h3>
+                        <p class="text-sm text-gray-600">Get help from our team</p>
+                    </a>
+                </div>
+
+                <!-- FAQs -->
+                <div id="getting-started" class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                    <div class="space-y-4">
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">How do I record a dream?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    To record a dream, navigate to the Dreams page and click the "Record Dream" button.
+                                    Fill in the details including the title, date, time, emotions, and description. You
+                                    can also add audio recordings and tags to organize your dreams better.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">How do I add a prayer request?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Go to the Prayers page and click "Add Prayer". Enter your prayer request, add
+                                    relevant tags, and set whether it's private or public. You can also enable reminders
+                                    to help you remember to pray regularly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">What are custom emotions?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Custom emotions allow you to create personalized emotion tags beyond the default
+                                    ones. Go to Settings > Custom Emotions to create your own emotions with custom
+                                    names, emojis, and colors to better express your feelings.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">How do I track answered prayers?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    When viewing a prayer, click the "Mark as Answered" button. You can add updates to
+                                    track the journey of your prayer and celebrate when it's answered. All answered
+                                    prayers are displayed on your Praise Wall.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">Can I add audio to my entries?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Yes! When recording a dream or prayer, you can either upload an audio file or record
+                                    directly using your device's microphone. This is great for capturing your thoughts
+                                    immediately after waking up or during prayer time.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item -->
+                        <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+                            <button onclick="toggleFAQ(this)"
+                                class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                                <span class="font-semibold text-gray-900">How do I delete an entry?</span>
+                                <i class="hgi-stroke hgi-arrow-down-01 text-gray-400 transition-transform"></i>
+                            </button>
+                            <div class="hidden px-6 pb-6">
+                                <p class="text-gray-600 leading-relaxed">
+                                    When viewing a dream or prayer entry, click the delete button (trash icon). You'll
+                                    be asked to confirm the deletion to prevent accidental removal. Note that deleted
+                                    entries cannot be recovered.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Guide -->
+                <div id="features" class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Features Guide</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Feature Card -->
+                        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+                            <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-4">
+                                <i class="hgi-stroke hgi-moon text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">Dream Journal</h3>
+                            <p class="text-sm text-gray-600 mb-4">Record and track your dreams with detailed entries
+                                including emotions, tags, and audio recordings.</p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Add date, time, and sleep duration</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Tag dreams with emotions and categories</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Attach audio recordings</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Feature Card -->
+                        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+                            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4">
+                                <i class="hgi-stroke hgi-hand-prayer text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">Prayer Journal</h3>
+                            <p class="text-sm text-gray-600 mb-4">Keep track of your prayers, add updates, and celebrate
+                                answered prayers.</p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Create prayer requests with tags</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Add updates to track progress</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Mark prayers as answered</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Feature Card -->
+                        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+                            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                                <i class="hgi-stroke hgi-favourite text-orange-600 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">Emotion Tracking</h3>
+                            <p class="text-sm text-gray-600 mb-4">Monitor your emotional well-being with custom emotion
+                                tags and insights.</p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Create custom emotions</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>View emotion trends over time</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Get insights on your mood patterns</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Feature Card -->
+                        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+                            <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-4">
+                                <i class="hgi-stroke hgi-star text-yellow-600 text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">Praise Wall</h3>
+                            <p class="text-sm text-gray-600 mb-4">Celebrate answered prayers and blessings in your life.
+                            </p>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>View all answered prayers</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Share your testimonies</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="hgi-stroke hgi-checkmark-circle-01 text-green-600 mt-0.5"></i>
+                                    <span>Reflect on God's faithfulness</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Support -->
+                <div id="contact"
+                    class="bg-gradient-to-br from-primary/5 to-purple-50 rounded-3xl p-8 md:p-12 border border-primary/10">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4">
+                            <i class="hgi-stroke hgi-customer-support text-primary text-3xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Still Need Help?</h2>
+                        <p class="text-gray-600 mb-8">Our support team is here to assist you with any questions or
+                            issues.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="mailto:support@seer.app"
+                                class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                                <i class="hgi-stroke hgi-mail-01"></i>
+                                Email Support
+                            </a>
+                            <a href="#"
+                                class="px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+                                <i class="hgi-stroke hgi-message-01"></i>
+                                Live Chat
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Drawer Overlay -->
+    <div id="notificationOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Notification Drawer -->
+    <div id="notificationDrawer"
+        class="fixed inset-y-0 right-0 w-full md:w-[400px] bg-white shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-white sticky top-0 z-10">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold text-gray-900">Notifications</h2>
+                <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full">3 new</span>
+            </div>
+            <button id="closeNotificationBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+
+            <!-- Smart Insight -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-5 border border-blue-100">
+                <div class="flex items-start gap-3 mb-3">
+                    <i class="hgi-stroke hgi-ai-magic text-blue-600 text-xl mt-0.5"></i>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-sm mb-1">Smart Insight</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">You haven't logged a dream in 3 days. Usually,
+                            you log them on Monday mornings.</p>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-2 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                    Log a Dream
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex p-1 bg-gray-100 rounded-xl">
+                <button
+                    class="flex-1 py-1.5 text-sm font-medium text-gray-900 bg-white rounded-lg shadow-sm">All</button>
+                <button class="flex-1 py-1.5 text-sm font-medium text-gray-500 hover:text-gray-700">Mentions</button>
+            </div>
+
+            <!-- List -->
+            <div class="space-y-4">
+                <!-- Item -->
+                <div
+                    class="flex gap-4 p-4 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 transition-colors shadow-sm">
+                    <div class="flex-shrink-0">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=random"
+                            class="w-10 h-10 rounded-full">
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900"><span class="font-bold">Sarah Chen</span> commented on your
+                                dream</p>
+                            <span class="text-xs text-gray-400">2h</span>
+                        </div>
+                        <p class="text-xs text-gray-500 line-clamp-2 mb-2">"This is really interesting! I had a similar
+                            dream about flying..."</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-2 py-0.5 bg-gray-100 text-gray-600 text-[10px] font-bold rounded uppercase tracking-wider">Dream</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="flex gap-4 p-4 rounded-2xl bg-blue-50/50 border border-blue-100 transition-colors">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                            <i class="hgi-stroke hgi-notification-03"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm text-gray-900 font-medium">System Update</p>
+                            <span class="text-xs text-gray-400">5h</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mb-2">New features are available for your prayer journal.</p>
+                        <button class="text-xs font-bold text-blue-600 hover:underline">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <button class="w-full py-3 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Mark all as read
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay"
+        class="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] hidden transition-opacity opacity-0"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenuDrawer"
+        class="fixed inset-y-0 left-0 w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+
+        <!-- Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="hgi-stroke hgi-moon-02 text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">Seer</span>
+            </div>
+            <button id="closeMobileMenuBtn"
+                class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <i class="hgi-stroke hgi-cancel-01 text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-6">
+            <!-- Main Nav -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Navigation</h3>
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-dashboard-square-01 text-xl"></i>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="dreams.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-moon text-xl"></i>
+                    <span class="font-medium">Dreams</span>
+                </a>
+                <a href="prayers.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-hand-prayer text-xl"></i>
+                    <span class="font-medium">Prayers</span>
+                </a>
+                <a href="emotions.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-favourite text-xl"></i>
+                    <span class="font-medium">Emotions</span>
+                </a>
+                <a href="praise-wall.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-star text-xl"></i>
+                    <span class="font-medium">Praise Wall</span>
+                </a>
+            </div>
+
+            <div class="h-px bg-gray-100"></div>
+
+            <!-- Account -->
+            <div class="space-y-1">
+                <h3 class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Account</h3>
+                <a href="profile.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-user text-xl"></i>
+                    <span class="font-medium">Profile</span>
+                </a>
+                <a href="settings.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-settings-02 text-xl"></i>
+                    <span class="font-medium">Settings</span>
+                </a>
+                <a href="help.html"
+                    class="flex items-center gap-3 px-4 py-3 text-primary bg-primary/5 rounded-xl transition-colors">
+                    <i class="hgi-stroke hgi-help-circle text-xl"></i>
+                    <span class="font-medium">Help Center</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <a href="landing.html"
+                class="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl transition-colors">
+                <i class="hgi-stroke hgi-logout-02 text-xl"></i>
+                <span class="font-medium">Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav
+        class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 px-2 py-2 flex justify-between items-end">
+        <a href="index.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-dashboard-square-01 text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="dreams.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-moon text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Dreams</span>
+        </a>
+        <a href="prayers.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-hand-prayer text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Prayers</span>
+        </a>
+        <a href="emotions.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-favourite text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Emotions</span>
+        </a>
+        <a href="profile.html"
+            class="flex-1 flex flex-col items-center gap-1 py-2 text-gray-400 hover:text-primary transition-colors group">
+            <i class="hgi-stroke hgi-user text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-medium">Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/navigation.js"></script>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>
